@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9d9d9;
+}
+
+.folha-a4 {
+    width: 21cm;
+    height: 29.7cm;
+    background-color: white;
+    border: 1px dashed #444444;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.conteudo {
+    margin: 2cm 1cm 1cm 2cm;
+    border: 1px solid black;
+    height: 90%;
+
+    padding: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.area {
+    border: 1px solid black;
+    
+    display: grid;
+    gap: 1px;
+    padding: 1px;
+    background-color: black;
+}
+
+.area > .box {
+    background-color: white;
+}
+
+.campo-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-vertical > label {
+    background-color: #00995d;
+    height: 0.9rem;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.8rem;
+}
+
+.campo-vertical > .valor {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    padding: 0.9rem;
+}
+
+.campo-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.campo-horizontal > label {
+    background-color: #00995d;
+    padding: 0.5rem 0.9rem;
+    color: white;
+}
+
+.campo-horizontal > .valor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+}
+
+/* "Boxes" da área Tomador do Serviço */
+.tomador-do-servico { 
+    height: 20%;
+
+    grid-template-rows: 0.65fr 1.35fr;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.logo {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+}
+
+.logo > .legenda {
+    display: flex;
+    gap: 3rem;
+}
+
+.titulo {
+    grid-column: 3 / span 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.titulo > .geral, .unidade{
+    font-size: 1.2rem;   
+}
+
+.dados {
+    grid-column: 1 / span 4;
+}
+
+.checklist-anexos {
+    grid-column: 5 / span 3;
+}
+
+/* "Boxes" da área Serviço*/
+.servico {
+    height: 55%;
+    grid-template-rows: repeat(15,1fr);
+    grid-template-columns: repeat(6,1fr);
+}
+
+.prestador {
+    grid-column: 1 / span 7;
+}
+
+.cpf-cnpj {
+    grid-column: 1 / span 7;
+}
+
+.valor {
+    grid-column: 1 / span 4;
+}
+
+.data-de-pagamento {
+    grid-column: auto / span 3;
+}
+
+.descricao {
+    grid-column: 1 / span 7;
+    grid-row: auto / span 5;
+}
+
+.forma-de-pagamento {
+    grid-column: 1 / span 7;
+    grid-row: auto / span 6;    
+}
+
+.carimbo-solicitante {
+    grid-column: 1 / span 3;
+}
+
+.carimbo-lider-setor-solicitante {
+    grid-column: auto / span 3;
+}
+
+.conferencia{
+    height: 15%;
+}
+
+.aprovacao{
+    height: 10%;
+}
