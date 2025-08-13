@@ -40,13 +40,13 @@ body {
 .area {
     border: 1px solid black;
     display: grid;
-    gap: 1px;
     margin: 10px;
-    background-color: black;
 }
 
 .area > .box {
     background-color: white;
+    outline: 1px solid black;
+    outline-offset: -0.5px;
 }
 
 .campo-vertical {
