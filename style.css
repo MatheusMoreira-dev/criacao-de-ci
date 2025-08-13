@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     background-color: #d9d9d9;
 }
 
@@ -18,7 +19,6 @@ body {
     width: 21cm;
     height: 29.7cm;
     background-color: white;
-    border: 1px dashed #444444;
 
     display: flex;
     flex-direction: column;
@@ -39,10 +39,9 @@ body {
 
 .area {
     border: 1px solid black;
-    
     display: grid;
     gap: 1px;
-    padding: 1px;
+    margin: 10px;
     background-color: black;
 }
 
