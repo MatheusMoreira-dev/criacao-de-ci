@@ -73,7 +73,11 @@ body {
     justify-content: center;
     align-items: start;
 
-    padding: 0.9rem;
+    margin: 0.3rem 1rem;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .campo-horizontal {
@@ -83,8 +87,12 @@ body {
 
 .campo-horizontal > label {
     background-color: #00995d;
-    padding: 0.5rem 0.9rem;
+    padding: 0.3rem;
     color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .campo-horizontal > .valor {
@@ -141,7 +149,7 @@ body {
 
 /* "Boxes" da área Serviço*/
 .servico {
-    height: 55%;
+    height: 50%;
     grid-template-rows: repeat(15,1fr);
     grid-template-columns: repeat(6,1fr);
 }
@@ -164,24 +172,26 @@ body {
 
 .descricao {
     grid-column: 1 / span 7;
-    grid-row: auto / span 5;
+    grid-row: auto / span 6;
 }
 
 .forma-de-pagamento {
     grid-column: 1 / span 7;
-    grid-row: auto / span 6;    
+    grid-row: auto / span 4;    
 }
 
 .carimbo-solicitante {
     grid-column: 1 / span 3;
+    grid-row: auto / span 2;
 }
 
 .carimbo-lider-setor-solicitante {
     grid-column: auto / span 3;
+     grid-row: auto / span 2;
 }
 
 .conferencia{
-    height: 15%;
+    height: 20%;
 }
 
 .aprovacao{
