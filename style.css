@@ -26,26 +26,23 @@ body {
 }
 
 .conteudo {
-    margin: 2cm 1cm 1cm 2cm;
-    border: 1px solid black;
+    margin: 1.5cm 1cm 1cm 2cm;
     height: 90%;
 
     padding: 5px;
     
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 25px;
 }
 
 .area {
-    border: 1px solid black;
     display: grid;
-    margin: 10px;
 }
 
 .area > .box {
     background-color: white;
-    outline: 1px solid black;
+    outline: 1px solid rgb(80, 78, 78);
     outline-offset: -0.5px;
 }
 
@@ -58,6 +55,8 @@ body {
     background-color: #00995d;
     height: 0.9rem;
     color: white;
+
+    font-weight: 700;
     
     display: flex;
     justify-content: center;
@@ -90,6 +89,8 @@ body {
     padding: 0.3rem;
     color: white;
 
+    font-weight: 700;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,27 +108,50 @@ body {
 .tomador-do-servico { 
     height: 20%;
 
-    grid-template-rows: 0.65fr 1.35fr;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(7,1fr);
+    grid-template-columns: repeat(10,1fr);
 }
 
 .logo {
-    grid-column: 1 / span 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    grid-column: auto / span 3;
+    grid-row: auto / span 3;
 
-    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2,1fr);
+
+    gap: 0.3rem;
+    padding: 0 0.8rem;
+}
+
+.logo > .legenda, .logo > .imagem {
+    grid-column: auto / span 6;
+}
+
+.logo > .imagem {
+    grid-row: auto / span 2;
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
 }
 
 .logo > .legenda {
+    grid-row: auto / span 1;
+
     display: flex;
-    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo > .legenda > p {
+    font-size: 0.7rem;
 }
 
 .titulo {
-    grid-column: 3 / span 5;
+    grid-column: auto / span 7;
+    grid-row: auto / span 3;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,17 +164,19 @@ body {
 }
 
 .dados {
-    grid-column: 1 / span 4;
+    grid-column: auto / span 6;
+    grid-row: auto / span 4;
 }
 
 .checklist-anexos {
-    grid-column: 5 / span 3;
+    grid-column: auto / span 4;
+    grid-row: auto / span 4;
 }
 
 /* "Boxes" da área Serviço*/
 .servico {
-    height: 50%;
-    grid-template-rows: repeat(15,1fr);
+    height: 45%;
+    grid-template-rows: repeat(17,1fr);
     grid-template-columns: repeat(6,1fr);
 }
 
@@ -159,7 +185,7 @@ body {
 }
 
 .cpf-cnpj {
-    grid-column: 1 / span 7;
+    grid-column: auto / span 7;
 }
 
 .valor {
@@ -172,28 +198,40 @@ body {
 
 .descricao {
     grid-column: 1 / span 7;
-    grid-row: auto / span 6;
+    grid-row: auto / span 5;
 }
 
 .forma-de-pagamento {
     grid-column: 1 / span 7;
-    grid-row: auto / span 4;    
+    grid-row: auto / span 6;    
 }
 
-.carimbo-solicitante {
-    grid-column: 1 / span 3;
-    grid-row: auto / span 2;
-}
-
-.carimbo-lider-setor-solicitante {
+.carimbo-solicitante,  .carimbo-lider-setor-solicitante{
     grid-column: auto / span 3;
-     grid-row: auto / span 2;
+    grid-row: auto / span 3;
 }
 
-.conferencia{
-    height: 20%;
+/* "Boxes" da área Conferência */
+.conferencia {
+    height: 15%;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(2,1fr);
 }
 
+.carimbo-setor-financeiro,  .carimbo-supervisao-financeiro {
+    grid-column: auto / span 6;
+}
+
+.carimbo-gerencia-executiva {
+    grid-column: 4 / span 6;
+}
+
+/* "Boxes" da área Aprovação */
 .aprovacao{
-    height: 10%;
+    height: 8%;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.carimbo-diretor-presidente, .carimbo-diretor-vice-presidente, .carimbo-diretor-superintendente {
+    grid-column: auto / span 4;
 }
