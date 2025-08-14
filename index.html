@@ -1,173 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="./app.js"></script>
     <title>Gestão de C.I</title>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
 
     <main class="folha-a4">
-        <div class="conteudo">
-            
-            <section class="area tomador-do-servico">
-                <div class="box logo">
-                    <img class="imagem" src="./assets/unimed-cariri-logo.png" alt="Logo Unimed">
-                    <div class="legenda">
-                        <p class="cnpj">07.583.396/0001-96</p>
-                        <p class="codigo">53466-8</p>
-                    </div>
-                </div>
-                <div class="box titulo">
-                    <h1 class="geral">SOLICITAÇÃO DE PAGAMENTO</h1>
-                    <h1 class="unidade">UNIDADE</h1>
-                </div>
-                <div class="box dados">
+      <div class="conteudo">
+        <section class="area tomador-do-servico">
+          <div class="box logo">
+            <img
+              class="imagem"
+              src="./assets/unimed-cariri-logo.png"
+              alt="Logo Unimed"
+            />
+            <div class="legenda">
+              <p class="cnpj">07.583.396/0001-96</p>
+              <p class="codigo">53466-8</p>
+            </div>
+          </div>
+          <div class="box titulo">
+            <h1 class="geral">SOLICITAÇÃO DE PAGAMENTO</h1>
+            <h1 class="unidade">UNIDADE</h1>
+          </div>
+          <div class="box dados">
+            <div>
+              <label>SETOR:</label>
+              <p class="valor">MARKETING</p>
+            </div>
 
-                    <div>
-                        <label>SETOR:</label>
-                        <p class="valor">MARKETING</p>
-                    </div>
+            <div>
+              <label>SOLICITANTE:</label>
+              <p class="valor">ANA BEATRIZ MARQUES</p>
+            </div>
 
-                    <div>
-                        <label>SOLICITANTE:</label>
-                        <p class="valor">ANA BEATRIZ MARQUES</p>
-                    </div>
+            <div>
+              <label>DATA DA SOLICITAÇÃO:</label>
+              <p class="valor">11/08/2025</p>
+            </div>
 
-                    <div>
-                        <label>DATA DA SOLICITAÇÃO:</label>
-                        <p class="valor">11/08/2025</p>
-                    </div>
+            <div>
+              <label>RAMAL:</label>
+              <p class="valor">2018</p>
+            </div>
+          </div>
+          <div class="box checklist-anexos">
+            <h5 class="checklist__titulo">Documentos Anexados</h5>
+            <form>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Nota Fiscal ou Recibo</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Orçamento Aprovado</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Ordem de Pagamento/Recisões/Indenizações</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Contrato Assinado/Pagamento Mensal</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Acordo Judicial</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Água/Luz/Telefone/Celular/Internet/Tributos</label>
+              </div>
+              <div class="checklist__item">
+                <input type="checkbox" />
+                <label>Outros:</label>
+                <p class="valor"></p>
+              </div>
+            </form>
+          </div>
+        </section>
 
-                    <div>
-                        <label>RAMAL:</label>
-                        <p class="valor">2018</p>
-                    </div>
+        <section class="area servico">
+          <div class="box campo-vertical prestador">
+            <label>FAVORECIDO</label>
+            <p class="valor">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
 
-                </div>
-                <div class="box checklist-anexos">
-                    <h5 class="checklist__titulo">Documentos Anexados</h5>
-                    <form>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Nota Fiscal ou Recibo</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Orçamento Aprovado</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Ordem de Pagamento/Recisões/Indenizações</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Contrato Assinado/Pagamento Mensal</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Acordo Judicial</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Água/Luz/Telefone/Celular/Internet/Tributos</label>
-                        </div>
-                        <div class="checklist__item">
-                            <input type="checkbox">
-                            <label>Outros:</label>
-                            <p class="valor"></p>
-                        </div>
-                    </form>
-                </div>
-            </section>
-    
-            <section class="area servico">
-                <div class="box campo-vertical prestador">
-                    <label>FAVORECIDO</label>
-                    <p class="valor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ut! Soluta quibusdam quaerat, maiores vel voluptatem officiis, consectetur iusto in excepturi, nesciunt natus ad hic! Aut neque aliquam sit libero.</p>
-                </div>
+          <div class="box campo-horizontal cpf-cnpj">
+            <label>CNPJ / CPF:</label>
+            <p class="valor">Teste</p>
+          </div>
 
-                <div class="box campo-horizontal cpf-cnpj">
-                    <label>CNPJ / CPF:</label>
-                    <p class="valor">Teste</p>
-                </div>
-                
-                <div class="box campo-vertical valor">
-                    <label>VALOR (R$)</label>
-                    <p class="valor">R$</p>
-                </div>
-                
-                <div class="box campo-vertical data-de-pagamento">
-                    <label>DATA LIMITE</label>
-                    <p class="valor">10/12/2003</p>
-                </div>
+          <div class="box campo-vertical valor">
+            <label>VALOR (R$)</label>
+            <p class="valor">R$</p>
+          </div>
 
-                <div class="box campo-vertical descricao">
-                    <label>OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
-                    <p class="valor">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat quisquam commodi nihil iusto reprehenderit. Blanditiis, nulla non officia quisquam error, consectetur reiciendis laborum voluptas eaque quod expedita ut. Nemo, doloribus.</p>
-                </div>
+          <div class="box campo-vertical data-de-pagamento">
+            <label>DATA LIMITE</label>
+            <p class="valor">10/12/2003</p>
+          </div>
 
-                <div class="box campo-vertical forma-de-pagamento">
-                    <label>FORMA DE PAGAMENTO</label>
-                    <p class="valor">A</p>
-                </div>
+          <div class="box campo-vertical descricao">
+            <label>OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
+            <p class="valor">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
+              quisquam commodi nihil iusto reprehenderit. Blanditiis, nulla non
+              officia quisquam error, consectetur reiciendis laborum voluptas
+              eaque quod expedita ut. Nemo, doloribus.
+            </p>
+          </div>
 
-                <div class="box campo-vertical carimbo-solicitante">
-                    <label>SOLICITANTE</label>
-                    <p class="valor">A</p>
-                </div>
+          <div class="box campo-vertical forma-de-pagamento">
+            <label>FORMA DE PAGAMENTO</label>
 
-                <div class="box campo-vertical carimbo-lider-setor-solicitante">
-                    <label>LÍDER DO SETOR SOLICITANTE</label>
-                    <p class="valor">A</p>
-                </div>
+            <form class="campo-vertical__conteudo">
+            </form>
+          </div>
 
-            </section>
-    
-            <section class="area conferencia">
-                
-                <div class="box campo-vertical carimbo-setor-financeiro">
-                    <label>SETOR FINANCEIRO</label>
-                    <p class="valor"></p>
-                </div>
+          <div class="box campo-vertical carimbo-solicitante">
+            <label>SOLICITANTE</label>
+            <p class="valor"></p>
+          </div>
 
-                <div class="box campo-vertical carimbo-supervisao-financeiro">
-                    <label>SUPERVISÃO FINANCEIRO</label>
-                    <p class="valor"></p>
-                </div>
+          <div class="box campo-vertical carimbo-lider-setor-solicitante">
+            <label>LÍDER DO SETOR SOLICITANTE</label>
+            <p class="valor"></p>
+          </div>
+        </section>
 
-                <div class="box campo-vertical carimbo-gerencia-executiva">
-                    <label>GERÊNCIA EXECUTIVA</label>
-                    <p class="valor"></p>
-                </div>
+        <section class="area conferencia">
+          <div class="box campo-vertical carimbo-setor-financeiro">
+            <label>SETOR FINANCEIRO</label>
+            <p class="valor"></p>
+          </div>
 
-            </section>
-    
-            <section class="area aprovacao">
+          <div class="box campo-vertical carimbo-supervisao-financeiro">
+            <label>SUPERVISÃO FINANCEIRO</label>
+            <p class="valor"></p>
+          </div>
 
-                <div class="box campo-vertical carimbo-diretor-presidente">
-                    <label>DIRETOR PRESIDENTE</label>
-                    <p class="valor"></p>
-                </div>
+          <div class="box campo-vertical carimbo-gerencia-executiva">
+            <label>GERÊNCIA EXECUTIVA</label>
+            <p class="valor"></p>
+          </div>
+        </section>
 
-                <div class="box campo-vertical carimbo-diretor-vice-presidente">
-                    <label>DIRETOR VICE-PRESIDENTE</label>
-                    <p class="valor"></p>
-                </div>
+        <section class="area aprovacao">
+          <div class="box campo-vertical carimbo-diretor-presidente">
+            <label>DIRETOR PRESIDENTE</label>
+            <p class="valor"></p>
+          </div>
 
-                <div class="box campo-vertical carimbo-diretor-superintendente">
-                    <label>DIRETOR SUPERINTENDENTE</label>
-                    <p class="valor"></p>
-                </div>
+          <div class="box campo-vertical carimbo-diretor-vice-presidente">
+            <label>DIRETOR VICE-PRESIDENTE</label>
+            <p class="valor"></p>
+          </div>
 
-            </section>
-
-        </div>
+          <div class="box campo-vertical carimbo-diretor-superintendente">
+            <label>DIRETOR SUPERINTENDENTE</label>
+            <p class="valor"></p>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer></footer>
-</body>
+  </body>
 </html>
