@@ -116,31 +116,24 @@ body {
     grid-column: auto / span 3;
     grid-row: auto / span 3;
 
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2,1fr);
+    display: flex;
+    flex-direction: column;
 
-    gap: 0.3rem;
-    padding: 0 0.8rem;
-}
-
-.logo > .legenda, .logo > .imagem {
-    grid-column: auto / span 6;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.8rem;
 }
 
 .logo > .imagem {
     grid-row: auto / span 2;
-    width: 100%;
-    height: auto;
+    width: 90%;
 
     object-fit: contain;
 }
 
 .logo > .legenda {
-    grid-row: auto / span 1;
-
     display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -206,6 +199,14 @@ body {
 .checklist-anexos {
     grid-column: auto / span 4;
     grid-row: auto / span 4;
+}
+
+.checklist-anexos > h5 {
+    font-size: 0.8rem;
+}
+
+.checklist-anexos > form > .checklist__item > label{
+    font-size: 0.8rem;
 }
 
 /* "Boxes" da área Serviço*/
