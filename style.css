@@ -7,6 +7,7 @@
     font-size: 0.875rem;
 }
 
+
 body {
     display: flex;
     flex-direction: column;
@@ -16,24 +17,16 @@ body {
 }
 
 .folha-a4 {
-    width: 21cm;
-    height: 29.7cm;
+    width: 210mm;
+    height: 297mm;
     background-color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: start;
-}
 
-.conteudo {
-    margin: 1.5cm 1cm 1cm 2cm;
-    height: 90%;
-
-    padding: 5px;
-    
-    display: flex;
-    flex-direction: column;
     gap: 25px;
+    padding: 1.5cm 1cm 1cm 2cm;
 }
 
 .area {
@@ -104,15 +97,15 @@ body {
     width: 80%;
 }
 
-/* "Boxes" da área Tomador do Serviço */
-.tomador-do-servico { 
+/* "Boxes" da área Contratante */
+.area__contratante { 
     height: 20%;
 
     grid-template-rows: repeat(11,1fr);
     grid-template-columns: repeat(10,1fr);
 }
 
-.logo {
+.contratante__logo {
     grid-column: auto / span 3;
     grid-row: auto / span 4;
 
@@ -124,23 +117,23 @@ body {
     padding: 0.2rem 0.8rem;
 }
 
-.logo > .imagem {
+.contratante__logo__imagem {
     width: 80%;
 
     object-fit: cover;
 }
 
-.logo > .legenda {
+.contratante__logo__legenda{
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-.logo > .legenda > p {
+.contratante__logo__legenda > p {
     font-size: 0.7rem;
 }
 
-.titulo {
+.titulo-do-documento {
     grid-column: auto / span 7;
     grid-row: auto / span 4;
 
@@ -151,11 +144,11 @@ body {
     gap: 0.5rem;
 }
 
-.titulo > .geral, .unidade {
+.titulo-do-documento__nome-documento, .titulo-do-documento__unidade-documento {
     font-size: 1.2rem;   
 }
 
-.tomador-do-servico > .dados {
+.contratante__dados {
     grid-column: auto / span 6;
     grid-row: auto / span 7;
 
@@ -166,13 +159,13 @@ body {
     padding: 0 0.3rem 0 0.3rem;
 }
 
-.tomador-do-servico > .dados > div {
+.contratante__dados > div {
     display: grid;
     grid-template-columns: repeat(11,1fr);
     gap: 0.5rem;
 }
 
-.tomador-do-servico > .dados > div > label {
+.contratante__dados > div > label {
     grid-column: auto / span 4;
     padding:  1px 0.5rem;
     background-color: #00995d;
@@ -187,7 +180,7 @@ body {
     font-weight: 500;
 }
 
-.tomador-do-servico > .dados > div > .valor {
+.contratante__dados > div > .valor {
     grid-column: auto / span 7;
     
     display: flex;
@@ -196,7 +189,7 @@ body {
     font-size: 0.8rem;
 }
 
-.checklist-anexos {
+.checklist-anexos-ao-documento {
     grid-column: auto / span 4;
     grid-row: auto / span 7;
 
@@ -204,7 +197,7 @@ body {
     flex-direction: column;
 }
 
-.checklist-anexos > h5 {
+.checklist-anexos-ao-documento > h5 {
     font-size: 0.8rem;
     display: flex;
     align-items: center;
@@ -215,7 +208,7 @@ body {
     padding: 0.1rem;
 }
 
-.checklist-anexos > form {
+.checklist-anexos-ao-documento > form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -223,18 +216,18 @@ body {
     height: 100%;
 }
 
-.checklist-anexos > form > .checklist__item {
+.checklist-anexos-ao-documento > form > .checklist__item {
     display: flex;
     align-items: center;
     gap: 0.2rem;
 }
 
-.checklist-anexos > form > .checklist__item > label {
+.checklist-anexos-ao-documento > form > .checklist__item > label {
     font-size: 0.8rem;
 }
 
 /* "Boxes" da área Serviço*/
-.servico {
+.area__servico {
     height: 45%;
     grid-template-rows: repeat(17,1fr);
     grid-template-columns: repeat(6,1fr);
@@ -294,4 +287,10 @@ body {
 
 .carimbo-diretor-presidente, .carimbo-diretor-vice-presidente, .carimbo-diretor-superintendente {
     grid-column: auto / span 4;
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
 }
