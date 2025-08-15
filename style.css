@@ -97,6 +97,41 @@ body {
     width: 80%;
 }
 
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-container :hover {
+    cursor: pointer;
+}
+
+.checkbox-container > input{
+    display: none;
+}
+
+.checkbox-container > .checkmark {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+
+    border-radius: 0.3rem;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "X";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 /* "Boxes" da área Contratante */
 .area__contratante { 
     height: 20%;
@@ -257,6 +292,20 @@ body {
 .forma-de-pagamento {
     grid-column: 1 / span 7;
     grid-row: auto / span 6;    
+}
+
+.forma-de-pagamento > .campo-vertical__conteudo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    padding: 1rem;
+}
+
+.tipos-de-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .carimbo-solicitante,  .carimbo-lider-setor-solicitante{
