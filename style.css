@@ -101,6 +101,8 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+    font-size: 0.875rem;
 }
 
 .checkbox-container :hover {
@@ -112,8 +114,8 @@ body {
 }
 
 .checkbox-container > .checkmark {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     border: 1px solid black;
     display: inline-block;
     position: relative;
@@ -297,6 +299,7 @@ body {
 .forma-de-pagamento > .campo-vertical__conteudo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 
     padding: 1rem;
@@ -306,6 +309,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.conta-bancaria__tipos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .carimbo-solicitante,  .carimbo-lider-setor-solicitante{
