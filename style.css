@@ -197,7 +197,7 @@ body {
     flex-direction: column;
 }
 
-.checklist-anexos-ao-documento > h5 {
+.checklist-anexos-ao-documento > label {
     font-size: 0.8rem;
     display: flex;
     align-items: center;
@@ -291,6 +291,47 @@ body {
 
 @media print {
     @page {
+        margin: 1.5cm 1cm 1cm 2cm;
+        size: A4;
+    }
+
+    body {
+        background: none;
+        display: block;
+    }
+
+    main {
+        padding: 0;
         margin: 0;
+        box-shadow: none;
+        background: white;
+        width: 100%;
+        height: auto;
+    }
+
+    body, main, header, footer, section, article, div {
+        background: white !important;
+        color: black !important;
+    }
+
+    * {
+        background-image: none !important;
+    }
+
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    p, span, li, td, th, h1, h2, h3, h4, h5, h6 {
+        color: #333 !important; /* cinza escuro em vez de preto puro */
+    }
+
+    img {
+        filter: grayscale(100%) contrast(90%);
+    }
+
+    .contratante__dados > div > label, .campo-vertical > label, .campo-horizontal > label, .checklist__titulo {
+        background-color: #7a7676 !important;
     }
 }
