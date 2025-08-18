@@ -13,7 +13,7 @@
 
     <main class="folha-a4">
       <section class="section__contratante">
-        <div class="container contratante__logo">
+        <div class="container flex-column flex-items-center contratante__logo">
           <img
             class="contratante__logo__imagem"
             src="./assets/unimed-cariri-logo.png"
@@ -86,29 +86,29 @@
       </section>
 
       <section class="section__servico">
-        <div class="container campo-vertical prestador">
-          <label>FAVORECIDO</label>
-          <p class="valor">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="container field-group flex-column flex-items-center prestador">
+          <label class="label fullsize">FAVORECIDO</label>
+          <p class="content fullsize">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-        <div class="container campo-horizontal cpf-cnpj">
-          <label>CNPJ / CPF:</label>
-          <p class="valor">Teste</p>
+        <div class="container field-group flex-row flex-items-center cpf-cnpj">
+          <label class="label width-fit-content">CPF/CNPJ:</label>
+          <p class="content fullsize">Teste</p>
         </div>
 
-        <div class="container campo-vertical valor">
-          <label>VALOR (R$)</label>
-          <p class="valor">R$</p>
+        <div class="container field-group flex-column flex-items-center valor">
+          <label class="label fullsize">VALOR (R$)</label>
+          <p class="content fullsize">R$</p>
         </div>
 
-        <div class="container campo-vertical data-de-pagamento">
-          <label>DATA LIMITE</label>
-          <p class="valor">10/12/2003</p>
+        <div class="container field-group flex-column flex-items-center data-de-pagamento">
+          <label class="label fullsize">DATA LIMITE</label>
+          <p class="content fullsize">10/12/2003</p>
         </div>
 
-        <div class="container campo-vertical descricao">
-          <label>OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
-          <p class="valor">
+        <div class="container field-group flex-column flex-items-center descricao">
+          <label class="label height-fit-content">OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
+          <p class="content fullsize">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
             quisquam commodi nihil iusto reprehenderit. Blanditiis, nulla non
             officia quisquam error, consectetur reiciendis laborum voluptas
@@ -116,11 +116,10 @@
           </p>
         </div>
 
-        <div class="container campo-vertical forma-de-pagamento">
-          <label>FORMA DE PAGAMENTO</label>
+        <div class="container field-group flex-column flex-items-center forma-de-pagamento">
+          <label class="label height-fit-content">FORMA DE PAGAMENTO</label>
 
-          <form class="campo-vertical__conteudo">
-
+          <form class="content fullsize">
             <div class="tipos-de-pagamento">
               <label class="tipos-de-pagamento__checkbox checkbox-container">
                 <input type="checkbox">
@@ -146,7 +145,6 @@
                 BOLETO
               </label>
             </div>
-
             <div class="conta-bancaria">
               <label class="conta-corrente checkbox-container">
                 <input type="checkbox">
@@ -170,52 +168,51 @@
                 <input type="text">
               </div>
             </div>
-
           </form>
         </div>
 
-        <div class="container campo-vertical carimbo-solicitante">
-          <label>SOLICITANTE</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-solicitante">
+          <label class="label height-fit-content">SOLICITANTE</label>
+          <p class="content fullsize"></p>
         </div>
 
-        <div class="container campo-vertical carimbo-lider-setor-solicitante">
-          <label>LÍDER DO SETOR SOLICITANTE</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-lider-setor-solicitante">
+          <label class="label height-fit-content">LÍDER DO SETOR SOLICITANTE</label>
+          <p class="content fullsize"></p>
         </div>
       </section>
 
       <section class="section__conferencia">
-        <div class="container campo-vertical carimbo-setor-financeiro">
-          <label>SETOR FINANCEIRO</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-setor-financeiro">
+          <label class="label height-fit-content">SETOR FINANCEIRO</label>
+          <p class="content fullsize"></p>
         </div>
 
-        <div class="container campo-vertical carimbo-supervisao-financeiro">
-          <label>SUPERVISÃO FINANCEIRO</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-supervisao-financeiro">
+          <label class="label height-fit-content">SUPERVISÃO FINANCEIRO</label>
+          <p class="content fullsize"></p>
         </div>
 
-        <div class="container campo-vertical carimbo-gerencia-executiva">
-          <label>GERÊNCIA EXECUTIVA</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-gerencia-executiva">
+          <label class="label height-fit-content">GERÊNCIA EXECUTIVA</label>
+          <p class="content fullsize"></p>
         </div>
       </section>
 
       <section class="section__aprovacao">
-        <div class="container campo-vertical carimbo-diretor-presidente">
-          <label>DIRETOR PRESIDENTE</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-diretor-presidente">
+          <label class="label height-fit-content">DIRETOR PRESIDENTE</label>
+          <p class="content fullsize"></p>
         </div>
 
-        <div class="container campo-vertical carimbo-diretor-vice-presidente">
-          <label>DIRETOR VICE-PRESIDENTE</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-diretor-vice-presidente">
+          <label class="label height-fit-content">DIRETOR VICE-PRESIDENTE</label>
+          <p class="content fullsize"></p>
         </div>
 
-        <div class="container campo-vertical carimbo-diretor-superintendente">
-          <label>DIRETOR SUPERINTENDENTE</label>
-          <p class="valor"></p>
+        <div class="container field-group flex-column flex-items-center carimbo-diretor-superintendente">
+          <label class="label height-fit-content">DIRETOR SUPERINTENDENTE</label>
+          <p class="content fullsize"></p>
         </div>
       </section>
     </main>
