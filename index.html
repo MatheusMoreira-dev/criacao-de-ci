@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="style.css" />
     <script src="./app.js"></script>
     <title>Gestão de C.I</title>
+    <link rel="icon" type="image/x-icon" href="./assets/unimed-cariri-logo.png">
   </head>
   <body>
     <header></header>
 
     <main class="folha-a4">
-      <section class="area area__contratante">
-        <div class="box contratante__logo">
+      <section class="section__contratante">
+        <div class="container contratante__logo">
           <img
             class="contratante__logo__imagem"
             src="./assets/unimed-cariri-logo.png"
@@ -23,11 +24,11 @@
             <p class="codigo">53466-8</p>
           </div>
         </div>
-        <div class="box titulo-do-documento">
+        <div class="container titulo-do-documento">
           <h1 class="titulo-do-documento__nome-documento">SOLICITAÇÃO DE PAGAMENTO</h1>
           <h1 class="titulo-do-documento__unidade-documento">UNIDADE</h1>
         </div>
-        <div class="box contratante__dados">
+        <div class="container contratante__dados">
           <div>
             <label>SETOR:</label>
             <p class="valor">MARKETING</p>
@@ -48,7 +49,7 @@
             <p class="valor">2018</p>
           </div>
         </div>
-        <div class="box checklist-anexos-ao-documento">
+        <div class="container checklist-anexos-ao-documento">
           <label class="checklist__titulo">Documentos Anexados</label>
           <form>
             <div class="checklist__item">
@@ -84,28 +85,28 @@
         </div>
       </section>
 
-      <section class="area area__servico">
-        <div class="box campo-vertical prestador">
+      <section class="section__servico">
+        <div class="container campo-vertical prestador">
           <label>FAVORECIDO</label>
           <p class="valor">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-        <div class="box campo-horizontal cpf-cnpj">
+        <div class="container campo-horizontal cpf-cnpj">
           <label>CNPJ / CPF:</label>
           <p class="valor">Teste</p>
         </div>
 
-        <div class="box campo-vertical valor">
+        <div class="container campo-vertical valor">
           <label>VALOR (R$)</label>
           <p class="valor">R$</p>
         </div>
 
-        <div class="box campo-vertical data-de-pagamento">
+        <div class="container campo-vertical data-de-pagamento">
           <label>DATA LIMITE</label>
           <p class="valor">10/12/2003</p>
         </div>
 
-        <div class="box campo-vertical descricao">
+        <div class="container campo-vertical descricao">
           <label>OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
           <p class="valor">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
@@ -115,10 +116,11 @@
           </p>
         </div>
 
-        <div class="box campo-vertical forma-de-pagamento">
+        <div class="container campo-vertical forma-de-pagamento">
           <label>FORMA DE PAGAMENTO</label>
 
           <form class="campo-vertical__conteudo">
+
             <div class="tipos-de-pagamento">
               <label class="tipos-de-pagamento__checkbox checkbox-container">
                 <input type="checkbox">
@@ -144,72 +146,74 @@
                 BOLETO
               </label>
             </div>
+
             <div class="conta-bancaria">
-              <div class="conta-bancaria__tipos">
-                
-                <label class="conta-bancaria__checkbox checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                  Corrente
-                </label>
+              <label class="conta-corrente checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Corrente
+              </label>
 
-                <label class="conta-bancaria__checkbox checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                  Poupança
-                </label>
+              <label class="conta-poupanca checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Poupança
+              </label>
+              
+              <div class="input-dados-conta numero-banco">
+                <label>N° BANCO</label>
+                <input type="text">
+              </div>
 
+              <div class="input-dados-conta nome-banco">
+                <label>NOME BANCO</label>
+                <input type="text">
               </div>
-              
-              <div>
-                <label></label>
-                <span></span>
-              </div>
-              
             </div>
+
           </form>
         </div>
 
-        <div class="box campo-vertical carimbo-solicitante">
+        <div class="container campo-vertical carimbo-solicitante">
           <label>SOLICITANTE</label>
           <p class="valor"></p>
         </div>
 
-        <div class="box campo-vertical carimbo-lider-setor-solicitante">
+        <div class="container campo-vertical carimbo-lider-setor-solicitante">
           <label>LÍDER DO SETOR SOLICITANTE</label>
           <p class="valor"></p>
         </div>
       </section>
 
-      <section class="area conferencia">
-        <div class="box campo-vertical carimbo-setor-financeiro">
+      <section class="section__conferencia">
+        <div class="container campo-vertical carimbo-setor-financeiro">
           <label>SETOR FINANCEIRO</label>
           <p class="valor"></p>
         </div>
 
-        <div class="box campo-vertical carimbo-supervisao-financeiro">
+        <div class="container campo-vertical carimbo-supervisao-financeiro">
           <label>SUPERVISÃO FINANCEIRO</label>
           <p class="valor"></p>
         </div>
 
-        <div class="box campo-vertical carimbo-gerencia-executiva">
+        <div class="container campo-vertical carimbo-gerencia-executiva">
           <label>GERÊNCIA EXECUTIVA</label>
           <p class="valor"></p>
         </div>
       </section>
 
-      <section class="area aprovacao">
-        <div class="box campo-vertical carimbo-diretor-presidente">
+      <section class="section__aprovacao">
+        <div class="container campo-vertical carimbo-diretor-presidente">
           <label>DIRETOR PRESIDENTE</label>
           <p class="valor"></p>
         </div>
 
-        <div class="box campo-vertical carimbo-diretor-vice-presidente">
+        <div class="container campo-vertical carimbo-diretor-vice-presidente">
           <label>DIRETOR VICE-PRESIDENTE</label>
           <p class="valor"></p>
         </div>
 
-        <div class="box campo-vertical carimbo-diretor-superintendente">
+        <div class="container campo-vertical carimbo-diretor-superintendente">
           <label>DIRETOR SUPERINTENDENTE</label>
           <p class="valor"></p>
         </div>
