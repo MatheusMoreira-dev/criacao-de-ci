@@ -147,8 +147,7 @@ body {
     grid-column: auto / span 3;
     grid-row: auto / span 4;
 
-    justify-content: space-between;
-    padding: 0.2rem 0.8rem;
+    justify-content: space-evenly;
 }
 
 .contratante__logo__imagem {
@@ -159,7 +158,7 @@ body {
 .contratante__logo__legenda{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .contratante__logo__legenda > p {
@@ -368,21 +367,7 @@ body {
         width: 100%;
         height: auto;
     }
-
-    body, main, header, footer, section, article, div {
-        background: white !important;
-        color: black !important;
-    }
-
-    * {
-        background-image: none !important;
-    }
-
-    * {
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
+        
     p, span, li, td, th, h1, h2, h3, h4, h5, h6 {
         color: #333 !important; /* cinza escuro em vez de preto puro */
     }
@@ -391,7 +376,7 @@ body {
         filter: grayscale(100%) contrast(90%);
     }
 
-    .contratante__dados > div > label, .campo-vertical > label, .campo-horizontal > label, .checklist__titulo {
+    .field-group > .label, img{
         background-color: #7a7676 !important;
     }
 }
