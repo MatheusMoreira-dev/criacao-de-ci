@@ -1,358 +1,307 @@
-* {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-
+    border: none;
+    
+    font-size: var(--tamanho-texto-leitura);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.875rem;
+    word-break: break-all;
+    
+    cursor: default;
+    list-style: none;
 }
 
-body {
+:root{
+    --cor-section-line: black;
+    --cor-div-inside-section-line: gray;
+
+    --cor-wrapper-title-background: #00995d;
+    --cor-wrapper-title-font: #fff;
+
+    --cor-background-input-hover-and-focus: #f4f8f4;
+    --cor-outline-dropdownlist: #d9d9d9;
+
+    --tamanho-texto-leitura: 0.875rem;
+    --tamanho-texto-titulo: 1.1rem;
+    --tamanho-texto-legenda: 0.7rem;
+
+    --tam-tiny-checkbox: 1rem;
+    --tam-medium-checkbox: 1rem;
+
+    --peso-texto-wrapper-title: bold;
+}
+
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+
     background-color: #d9d9d9;
 }
 
-.folha-a4 {
+.folha-a4{
     width: 210mm;
     height: 297mm;
-    background-color: white;
 
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
 
-    gap: 25px;
-    padding: 1.5cm 1cm 1cm 2cm;
+    border: 1px solid black;
+    padding: 1.5cm 1cm 3cm 1.5cm;
+
+    background-color: white;
 }
 
-.folha-a4 > section {
+section{
     display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap: 1px;
+
+    position: relative;
 }
 
-.container {
-    background-color: white;
-    outline: 1px solid rgb(80, 78, 78);
-    outline-offset: -0.5px;
+section > div {
+    outline: 1px solid var(--cor-div-inside-section-line);
+    position: relative;
 }
 
-.medium-font-size {
-    font-size: 0.7rem !important;
-}
+.col-span-1{grid-column: auto / span 1;}
+.col-span-2{grid-column: auto / span 2;}
+.col-span-3{grid-column: auto / span 3;}
+.col-span-4{grid-column: auto / span 4;}
+.col-span-5{grid-column: auto / span 5;}
+.col-span-6{grid-column: auto / span 6;}
+.col-span-7{grid-column: auto / span 7;}
+.col-span-8{grid-column: auto / span 8;}
+.col-span-9{grid-column: auto / span 9;}
+.col-span-10{grid-column: auto / span 10;}
 
-.field-group {
-    display: flex;
-    width: 100%;
-}
+.row-span-1{grid-row: auto / span 1;}
+.row-span-2{grid-row: auto / span 2;}
+.row-span-3{grid-row: auto / span 3;}
+.row-span-4{grid-row: auto / span 4;}
+.row-span-5{grid-row: auto / span 5;}
+.row-span-6{grid-row: auto / span 6;}
 
-.field-group > .label {
-    background-color: #00995d;
-    color: white;
-    font-weight: 700;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 0.3rem 0.8rem;
-}
-
-.field-group > .content {
-    display: flex;
-    justify-content: center;
-
-    overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
-
-    padding: 0.3rem 1rem;
-}
-
-.fullsize {
-    width: 100%;
-    height: 100%;
-}
-
-.width-fit-content {
-    width: fit-content;
-    height: 100%;
-}
-
-.width-30-percent {
-    width: 30%;
-    height: 100%;
-}
-
-.height-fit-content {
-    width: 100%;
-    height: fit-content;
-}
-
-.flex-items-start {
-    align-items: start;
-}
-
-.flex-items-center {
-    align-items: center;
-}
-
-.flex-content-space-between {
-    justify-content: space-between !important;
-    padding: 1rem;
-}
-
-.flex-column {
+.flex-col{
     display: flex;
     flex-direction: column;
 }
 
-.flex-row {
+.flex-col-center{
     display: flex;
-    flex-direction: row;
-}
-
-.checkbox-container {
-    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-
-    font-size: 0.875rem;
+    text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
-.checkbox-container :hover {
+.flex-row-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.centralize{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*Genéricos do Wrapper*/
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--cor-wrapper-title-background);
+    color: var(--cor-wrapper-title-font);
+    padding: 0.1rem;
+    font-weight: var(--peso-texto-wrapper-title);
+
+    padding: 0.2rem 0.3rem;
+}
+
+.wrapper .content {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+/*Especificações do wrapper*/
+
+.wrapper.horizontal{
+    flex-direction: row !important;
+}
+
+.wrapper.horizontal .title{
+    padding: 0 1rem !important;
+}
+
+input:hover, textarea:hover{
+    background-color: var(--cor-background-input-hover-and-focus);
     cursor: pointer;
 }
 
-.checkbox-container > input{
-    display: none;
-}
-
-.checkbox-container > .checkmark {
-    width: 1.4rem;
-    height: 1.4rem;
+input.border {
     border: 1px solid black;
+}
+
+input:focus, textarea:focus{
+    background-color: var(--cor-background-input-hover-and-focus);
+    font-size: var(--tamanho-texto-leitura);
+    border: none;
+    outline: none;
+}
+
+textarea{
+    resize: none;
+    text-align: center;
+}
+
+.checkitem input{display: none;}
+
+.checkitem span{
     display: inline-block;
+    border: 1px solid black;
+}
+
+.checkitem span:hover{
+    background-color: var(--cor-background-input-hover-and-focus);
+    cursor: pointer;
+}
+
+.checkitem.tiny {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1px;
+}
+
+.checkitem.tiny span{
+    width: var(--tam-tiny-checkbox);
+    height: var(--tam-tiny-checkbox);
+}
+
+.dropdown-container {
     position: relative;
-
-    border-radius: 0.3rem;
+    display: inline-block;
 }
 
-.checkbox-container input:checked + .checkmark::after {
-  content: "X";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  font-size: 1rem;
-  font-weight: 600;
+.dropdown-container > input {
+    width: auto;
+    padding: 5px;
 }
 
-/* "Boxes" da área Contratante */
-.section__contratante { 
-    height: 20%;
+.dropdown-container > ul{
+    border: 1px solid var(--cor-outline-dropdownlist);
+    padding: 5px;
+    width: 100%;
 
-    grid-template-rows: repeat(11,1fr);
-    grid-template-columns: repeat(10,1fr);
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    background-color: white;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
 }
 
-.contratante__logo {
-    grid-column: auto / span 3;
-    grid-row: auto / span 4;
-
-    justify-content: space-evenly;
+.dropdown-container > input:focus + ul{
+    display: block;
 }
 
-.contratante__logo__imagem {
-    width: 80%;
-    object-fit: cover;
+.dropdown-container >ul li{
+    padding: 5px;
+    width: 100%;
+    border-bottom: 1px solid var(--cor-outline-dropdownlist);
 }
 
-.contratante__logo__legenda{
+.dropdown-container >ul li:hover{
+    background-color: var(--cor-background-input-hover-and-focus);
+    cursor: pointer;
+}
+
+/*Section contratante*/
+
+#contratante{
+    grid-template-columns: repeat(12,1fr);
+    height: 18%;
+}
+
+#logo-cnpj-codigo{
+    gap: 1px;
+    padding: 0.1rem 1rem;
+}
+
+#logo-cnpj-codigo > img{width: 80%;}
+
+#logo-cnpj-codigo > figcaption {
     display: flex;
     width: 100%;
+    justify-content: space-between;
+}
+
+#logo-cnpj-codigo > figcaption > p{font-size: var(--tamanho-texto-legenda);}
+
+#titulo-unidade h1, #unidade-input{
+    font-size: var(--tamanho-texto-titulo);
+}
+
+#setor-solicitante-data-ramal{
+    padding: 0 1rem;
     justify-content: space-evenly;
 }
 
-.contratante__logo__legenda > p {
-    font-size: 0.7rem;
-}
-
-.titulo-do-documento {
-    grid-column: auto / span 7;
-    grid-row: auto / span 4;
-
+#setor-solicitante-data-ramal > div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.titulo-do-documento__nome-documento, .titulo-do-documento__unidade-documento {
-    font-size: 1.2rem;   
-}
-
-.contratante__dados {
-    grid-column: auto / span 6;
-    grid-row: auto / span 7;
-
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-
-    align-items:center;
-    padding: 0 0.3rem 0 0.3rem;
-}
-
-.checklist-anexos-ao-documento {
-    grid-column: auto / span 4;
-    grid-row: auto / span 7;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.checklist-anexos-ao-documento > label {
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #00995d;
-    color: white;
-    padding: 0.1rem;
-}
-
-.checklist-anexos-ao-documento > form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: 100%;
-}
-
-.checklist-anexos-ao-documento > form > .checklist__item {
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-}
-
-.checklist-anexos-ao-documento > form > .checklist__item > label {
-    font-size: 0.8rem;
-}
-
-/* "Boxes" da área Serviço*/
-.section__servico {
-    height: 45%;
-    grid-template-rows: repeat(17,1fr);
-    grid-template-columns: repeat(6,1fr);
-}
-
-.prestador {
-    grid-column: 1 / span 7;
-}
-
-.cpf-cnpj {
-    grid-column: auto / span 7;
-}
-
-.valor {
-    grid-column: 1 / span 4;
-}
-
-.data-de-pagamento {
-    grid-column: auto / span 3;
-}
-
-.descricao {
-    grid-column: 1 / span 7;
-    grid-row: auto / span 5;
-}
-
-.forma-de-pagamento {
-    grid-column: 1 / span 7;
-    grid-row: auto / span 6;    
-}
-
-.tipos-de-pagamento {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.conta-bancaria {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
+    width: 100%;
 }
 
-.conta-bancaria__tipos {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#setor-solicitante-data-ramal > div > label {
+    flex: 2;
+    text-align: center;
+    padding: 2px;
+    background-color: var(--cor-wrapper-title-background);
+    color: var(--cor-wrapper-title-font);
+    font-weight: var(--peso-texto-wrapper-title);
+    font-size: var(--tamanho-texto-legenda);
 }
 
-.carimbo-solicitante,  .carimbo-lider-setor-solicitante{
-    grid-column: auto / span 3;
-    grid-row: auto / span 3;
+#setor-solicitante-data-ramal > div > input {flex: 6;}
+
+#checklist-anexos .content{
+    justify-content: center;
+    padding: 0 0.3rem;
 }
 
-/* "Boxes" da área Conferência */
-.section__conferencia {
-    height: 15%;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(2,1fr);
-}
+#checklist-anexos .title {font-size: var(--tamanho-texto-legenda);}
 
-.carimbo-setor-financeiro,  .carimbo-supervisao-financeiro {
-    grid-column: auto / span 6;
-}
+#checklist-anexos > .content > label {font-size: var(--tamanho-texto-legenda);}
 
-.carimbo-gerencia-executiva {
-    grid-column: 4 / span 6;
-}
+/*Section servico-pagamento*/
+#servico-pagamento{grid-template-rows: repeat(16,1fr);}
 
-/* "Boxes" da área Aprovação */
-.section__aprovacao{
-    height: 8%;
-    grid-template-columns: repeat(12,1fr);
-}
+/*Section carimbos-conferencia*/
 
-.carimbo-diretor-presidente, .carimbo-diretor-vice-presidente, .carimbo-diretor-superintendente {
-    grid-column: auto / span 4;
-}
+#carimbo-gerencia-executiva{grid-column: 4 / span 6;}
 
-@media print {
-    @page {
-        margin: 1.5cm 1cm 1cm 2cm;
-        size: A4;
-    }
+#servico-pagamento{height: 50%;}
 
-    body {
-        background: none;
-        display: block;
-    }
+#carimbos-conferencia, #carimbos-aprovacao{grid-template-columns: repeat(12,1fr);}
 
-    main {
-        padding: 0;
-        margin: 0;
-        box-shadow: none;
-        background: white;
-        width: 100%;
-        height: auto;
-    }
-        
-    p, span, li, td, th, h1, h2, h3, h4, h5, h6 {
-        color: #333 !important; /* cinza escuro em vez de preto puro */
-    }
+#carimbos-conferencia{height: 15%;}
 
-    img {
-        filter: grayscale(100%) contrast(90%);
-    }
-
-    .field-group > .label, img{
-        background-color: #7a7676 !important;
-    }
-}
+#carimbos-aprovacao{height: 7.5%;}

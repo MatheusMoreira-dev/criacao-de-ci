@@ -3,124 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Criação de C.I</title>
+
     <link rel="stylesheet" href="style.css" />
-    <script src="./app.js"></script>
-    <title>Gestão de C.I</title>
     <link rel="icon" type="image/x-icon" href="./assets/unimed-cariri-logo.png">
   </head>
+
   <body>
     <header></header>
 
     <main class="folha-a4">
-      <section class="section__contratante">
-        <div class="container flex-column flex-items-center contratante__logo">
-          <img
-            class="contratante__logo__imagem"
-            src="./assets/unimed-cariri-logo.png"
-            alt="Logo Unimed"
-          />
-          <div class="contratante__logo__legenda">
-            <p class="cnpj">07.583.396/0001-96</p>
-            <p class="codigo">53466-8</p>
+      <section id="contratante">
+        <div id="logo-cnpj-codigo" class="col-span-3 flex-col-center">
+          <img src="./assets/unimed-cariri-logo.png" alt="Logo Unimed"/>
+          <figcaption>
+            <p>07.583.396/0001-96</p>
+            <p>53466-8</p>
+          </figcaption>
+        </div>
+
+        <div id="titulo-unidade" class="col-span-9 flex-col-center">
+          <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
+
+          <div class="dropdown-container">
+            <input id="unidade-input" type="text" value="UNIMED CARIRI" class="centralize"></input>
+            <ul id="lista-unidades"></ul>
           </div>
         </div>
-        <div class="container titulo-do-documento">
-          <h1 class="titulo-do-documento__nome-documento">SOLICITAÇÃO DE PAGAMENTO</h1>
-          <h1 class="titulo-do-documento__unidade-documento">UNIDADE</h1>
-        </div>
-        <div class="container contratante__dados">
-          <div class="field-group flex-row flex-items-start">
-            <label class="label width-30-percent medium-font-size">SETOR:</label>
-            <p class="content">MARKETING</p>
+
+        <div id="setor-solicitante-data-ramal" class="col-span-7 flex-col">
+          <div class="">
+            <label class="" for="nome-setor">SETOR:</label>
+            <input class="" id="nome-setor" type="text" value="MARKETING">
           </div>
 
-          <div class="field-group flex-row flex-items-start">
-            <label class="label width-30-percent medium-font-size">SOLICITANTE:</label>
-            <p class="content">ANA BEATRIZ MARQUES</p>
+          <div class="">
+            <label class="" for="nome-solicitante">SOLICITANTE:</label>
+            <input class="" id="nome-solicitante" type="text" value="Matheus Moreira Marcelino"></input>
           </div>
 
-          <div class="field-group flex-row flex-items-start">
-            <label class="label width-30-percent medium-font-size">SOLICITAÇÃO:</label>
-            <p class="content">11/08/2025</p>
+          <div class="">
+            <label class="" for="data-solicitacao">SOLICITAÇÃO:</label>
+            <input class="" id="data-solicitacao" type="text" value= "11/08/2025">
           </div>
 
-          <div class="field-group flex-row flex-items-start">
-            <label class="label width-30-percent medium-font-size">RAMAL:</label>
-            <p class="content">2018</p>
+          <div class="">
+            <label class="" for="ramal">RAMAL:</label>
+            <input class="" id="ramal" type="text" value="2018">
           </div>
         </div>
-        <div class="container checklist-anexos-ao-documento">
-          <label class="checklist__titulo">Documentos Anexados</label>
-          <form>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Nota Fiscal ou Recibo</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Orçamento Aprovado</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Ordem de Pagamento/Recisões/Indenizações</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Contrato Assinado/Pagamento Mensal</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Acordo Judicial</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Água/Luz/Telefone/Celular/Internet/Tributos</label>
-            </div>
-            <div class="checklist__item">
-              <input type="checkbox" />
-              <label>Outros:</label>
-              <p class="valor"></p>
-            </div>
+
+        <div id="checklist-anexos" class="col-span-5 wrapper">
+          <p class="title">Documentos Anexados</p>
+
+          <form class="content flex-col">
+            <label class="checkitem tiny">
+              <input type="checkbox">
+              <span></span>
+              Nota Fiscal ou Recibo
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Orçamento Aprovado
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Ordem de Pagamento/Recisões/indenizações
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Contrato Assinado/Pagamento Mensal
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Acordo Judicial
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Água/Luz/Telefone/Celular/Internet/Tributos
+            </label>
+            <label class="checkitem tiny">
+                <input type="checkbox">
+                <span class="checkmark tiny-checkmark"></span>
+                Outros: _________________
+            </label>
           </form>
         </div>
       </section>
 
-      <section class="section__servico">
-        <div class="container field-group flex-column flex-items-center prestador">
-          <label class="label fullsize">FAVORECIDO</label>
-          <p class="content fullsize">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <section id="servico-pagamento">
+        <div id="favorecido-nome" class="col-span-10 row-span-1 wrapper">
+          <label class="title">FAVORECIDO</label>
+          <input class="content centralize"></input>
         </div>
 
-        <div class="container field-group flex-row flex-items-center cpf-cnpj">
-          <label class="label width-fit-content">CPF/CNPJ:</label>
-          <p class="content fullsize">Teste</p>
+        <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 wrapper horizontal">
+          <label class="title">CPF/CNPJ:</label>
+          <input class="content centralize">
         </div>
 
-        <div class="container field-group flex-column flex-items-center valor">
-          <label class="label fullsize">VALOR (R$)</label>
-          <p class="content fullsize">R$</p>
+        <div id="servico-valor" class="col-span-7 row-span-1 wrapper">
+          <label class="title">VALOR (R$)</label>
+          <input type="number" class="content centralize">
         </div>
 
-        <div class="container field-group flex-column flex-items-center data-de-pagamento">
-          <label class="label fullsize">DATA LIMITE</label>
-          <p class="content fullsize">10/12/2003</p>
+        <div id="data-pagamento" class="col-span-3 row-span-1 wrapper">
+          <span class="title">DATA LIMITE</span>
+          <div class="content centralize"></div>
         </div>
 
-        <div class="container field-group flex-column flex-items-center descricao">
-          <label class="label height-fit-content">OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
-          <p class="content fullsize">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
-            quisquam commodi nihil iusto reprehenderit. Blanditiis, nulla non
-            officia quisquam error, consectetur reiciendis laborum voluptas
-            eaque quod expedita ut. Nemo, doloribus.
-          </p>
+        <div id="descricao-servico" class="col-span-10 row-span-5 wrapper">
+          <label class="title">OBSERVAÇÕES / FINALIDADE / JUSTIFICATIVA DO PAGAMENTO</label>
+          <textarea class="content"></textarea>
         </div>
 
-        <div class="container field-group flex-column flex-items-center forma-de-pagamento">
-          <label class="label height-fit-content">FORMA DE PAGAMENTO</label>
+        <div id="forma-de-pagamento" class="col-span-10 row-span-5 wrapper vertical">
+          <label class="title">FORMA DE PAGAMENTO</label>
 
-          <form class="content fullsize flex-row flex-content-space-between flex-items-center">
-            <div class="tipos-de-pagamento">
+          <form class="content">
+            <div class="tipos-de-pagamento flex-col">
               <label class="tipos-de-pagamento__checkbox checkbox-container">
                 <input type="checkbox">
                 <span class="checkmark"></span>
@@ -147,77 +154,70 @@
             </div>
 
             <div class="conta-bancaria">
+              
               <label class="conta-corrente checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Corrente
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Corrente
               </label>
 
               <label class="conta-poupanca checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Poupança
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Poupança
               </label>
-              
-              <div class="input-dados-conta numero-banco">
-                <label>N° BANCO</label>
-                <input type="text">
-              </div>
 
-              <div class="input-dados-conta nome-banco">
-                <label>NOME BANCO</label>
-                <input type="text">
-              </div>
             </div>
           </form>
         </div>
 
-        <div class="container field-group flex-column flex-items-center carimbo-solicitante">
-          <label class="label height-fit-content">SOLICITANTE</label>
-          <p class="content fullsize"></p>
+        <div id="carimbo-solicitante" class="col-span-5 row-span-3 wrapper vertical">
+          <label class="title">SOLICITANTE</label>
+          <p class="content"></p>
         </div>
 
-        <div class="container field-group flex-column flex-items-center carimbo-lider-setor-solicitante">
-          <label class="label height-fit-content">LÍDER DO SETOR SOLICITANTE</label>
-          <p class="content fullsize"></p>
-        </div>
-      </section>
-
-      <section class="section__conferencia">
-        <div class="container field-group flex-column flex-items-center carimbo-setor-financeiro">
-          <label class="label height-fit-content">SETOR FINANCEIRO</label>
-          <p class="content fullsize"></p>
-        </div>
-
-        <div class="container field-group flex-column flex-items-center carimbo-supervisao-financeiro">
-          <label class="label height-fit-content">SUPERVISÃO FINANCEIRO</label>
-          <p class="content fullsize"></p>
-        </div>
-
-        <div class="container field-group flex-column flex-items-center carimbo-gerencia-executiva">
-          <label class="label height-fit-content">GERÊNCIA EXECUTIVA</label>
+        <div id="carimbo-lider-setor-solicitante" class="col-span-5 row-span-3 wrapper vertical">
+          <label class="title">LÍDER DO SETOR SOLICITANTE</label>
           <p class="content fullsize"></p>
         </div>
       </section>
 
-      <section class="section__aprovacao">
-        <div class="container field-group flex-column flex-items-center carimbo-diretor-presidente">
-          <label class="label height-fit-content">DIRETOR PRESIDENTE</label>
+      <section id="carimbos-conferencia">
+        <div id="carimbo-setor-financeiro" class="col-span-6 wrapper">
+          <label class="title">SETOR FINANCEIRO</label>
           <p class="content fullsize"></p>
         </div>
 
-        <div class="container field-group flex-column flex-items-center carimbo-diretor-vice-presidente">
-          <label class="label height-fit-content">DIRETOR VICE-PRESIDENTE</label>
-          <p class="content fullsize"></p>
+        <div id="carimbo-supervisao-financeiro" class="col-span-6 wrapper">
+          <label class="title">SUPERVISÃO FINANCEIRO</label>
+          <p class="content"></p>
         </div>
 
-        <div class="container field-group flex-column flex-items-center carimbo-diretor-superintendente">
-          <label class="label height-fit-content">DIRETOR SUPERINTENDENTE</label>
-          <p class="content fullsize"></p>
+        <div id="carimbo-gerencia-executiva" class="wrapper">
+          <label class="title">GERÊNCIA EXECUTIVA</label>
+          <p class="content"></p>
+        </div>
+      </section>
+
+      <section id="carimbos-aprovacao">
+        <div id="carimbo-diretor-presidente" class="col-span-4 wrapper">
+          <label class="title">DIRETOR PRESIDENTE</label>
+          <p class="content"></p>
+        </div>
+
+        <div id="carimbo-diretor-vice-presidente" class="col-span-4 wrapper">
+          <label class="title">DIRETOR VICE-PRESIDENTE</label>
+          <p class="content"></p>
+        </div>
+
+        <div id="carimbo-diretor-superintendente" class="col-span-4 wrapper">
+          <label class="title">DIRETOR SUPERINTENDENTE</label>
+          <p class="content"></p>
         </div>
       </section>
     </main>
 
     <footer></footer>
+    <script src="./app.js"></script>
   </body>
 </html>
