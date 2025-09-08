@@ -24,11 +24,25 @@ const unidades = [
     }
 ]
 
+const setores = [
+    {
+        'nome': 'MARKETING',
+        'ramal': '2018',
+        'colaboradores': [
+            'MATHEUS MOREIRA MARCELINO',
+            'ANA BEATRIZ MARQUES',
+            'SUYANNE SANTOS SOUSA',
+            'FELIPE LUIZ TAVARES',
+        ]
+    }
+];
+
 function selectItem (event) {
     const dropDown = event.target.parentNode.parentNode;
 
     const input = dropDown.querySelector('input');
     input.value = event.target.textContent;
+    input.dispatchEvent(new Event("input"));
 
     const span = dropDown.querySelector('span');
     span.style.font = getComputedStyle(input).font;
@@ -58,4 +72,18 @@ function loadDropdownItems (idDropdown, values = [] ,onClick = null) {
     }
 }
 
-loadDropdownItems('#lista-unidades', unidades.map(u => u.nome));
+function selectUnidade (event) {
+    const item = unidades.find(u => u.nome == event.target.textContent);
+
+    const cnpj = document.querySelector('#cnpj-unidade');
+    cnpj.textContent = item.cnpj;
+
+    const codigo = document.querySelector('#codigo-unidade');
+    codigo.textContent = item.codigo;
+}
+
+function selectUnidade () {
+    
+}
+
+loadDropdownItems('#lista-unidades', unidades.map(u => u.nome), selectUnidade);

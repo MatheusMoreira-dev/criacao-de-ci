@@ -127,7 +127,7 @@ section > div {
 }
 
 #setor-solicitante-data-ramal > div > label {
-    flex: 2;
+    flex: 0 0 30%;
     text-align: center;
     padding: 2px;
     background-color: var(--cor-wrapper-title-background);
@@ -137,7 +137,7 @@ section > div {
 }
 
 #setor-solicitante-data-ramal > div > input {
-    flex: 6;
+    flex: 1;
 }
 
 #checklist-anexos .content{
@@ -290,10 +290,6 @@ textarea{
 
     width: 100%;
     max-width: 20dvw;
-}
-
-.dropdown-container > input {
-    padding: 2.5px 5px;
 }
 
 .dropdown-container > ul{
