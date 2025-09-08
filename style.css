@@ -55,6 +55,7 @@ body{
     background-color: white;
 }
 
+/*Section´s*/
 section{
     display: grid;
     grid-template-columns: repeat(10,1fr);
@@ -63,9 +64,97 @@ section{
     position: relative;
 }
 
+#contratante{
+    grid-template-columns: repeat(12,1fr);
+    height: 18%;
+}
+
+#servico-pagamento{
+    height: 50%;
+    grid-template-rows: repeat(16,1fr);
+}
+
+#carimbos-conferencia, #carimbos-aprovacao{
+    grid-template-columns: repeat(12,1fr);
+}
+
+#carimbos-conferencia{
+    height: 15%;
+}
+
+#carimbos-aprovacao{
+    height: 7.5%;
+}
+
+/*Div´s (box) das Section´s*/
 section > div {
     outline: 1px solid var(--cor-div-inside-section-line);
     position: relative;
+}
+
+#logo-cnpj-codigo{
+    gap: 1px;
+    padding: 0.1rem 1rem;
+}
+
+#logo-cnpj-codigo > img{
+    width: 80%;
+}
+
+#logo-cnpj-codigo > figcaption {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#logo-cnpj-codigo > figcaption > p{
+    font-size: var(--tamanho-texto-legenda);
+}
+
+#titulo-unidade h1, #unidade-input{
+    font-size: var(--tamanho-texto-titulo);
+}
+
+#setor-solicitante-data-ramal{
+    padding: 0 1rem;
+    justify-content: space-evenly;
+}
+
+#setor-solicitante-data-ramal > div {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+#setor-solicitante-data-ramal > div > label {
+    flex: 2;
+    text-align: center;
+    padding: 2px;
+    background-color: var(--cor-wrapper-title-background);
+    color: var(--cor-wrapper-title-font);
+    font-weight: var(--peso-texto-wrapper-title);
+    font-size: var(--tamanho-texto-legenda);
+}
+
+#setor-solicitante-data-ramal > div > input {
+    flex: 6;
+}
+
+#checklist-anexos .content{
+    justify-content: center;
+    padding: 0 0.3rem;
+}
+
+#checklist-anexos .title {
+    font-size: var(--tamanho-texto-legenda);
+}
+
+#checklist-anexos > .content > label {
+    font-size: var(--tamanho-texto-legenda);
+}
+
+#carimbo-gerencia-executiva{
+    grid-column: 4 / span 6;
 }
 
 .col-span-1{grid-column: auto / span 1;}
@@ -116,7 +205,7 @@ section > div {
     text-align: center;
 }
 
-/*Genéricos do Wrapper*/
+/*Wrapper*/
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -139,8 +228,6 @@ section > div {
     flex: 1;
     padding: 0.5rem;
 }
-
-/*Especificações do wrapper*/
 
 .wrapper.horizontal{
     flex-direction: row !important;
@@ -171,7 +258,9 @@ textarea{
     text-align: center;
 }
 
-.checkitem input{display: none;}
+.checkitem input{
+    display: none;
+}
 
 .checkitem span{
     display: inline-block;
@@ -232,76 +321,3 @@ textarea{
     background-color: var(--cor-background-input-hover-and-focus);
     cursor: pointer;
 }
-
-/*Section contratante*/
-
-#contratante{
-    grid-template-columns: repeat(12,1fr);
-    height: 18%;
-}
-
-#logo-cnpj-codigo{
-    gap: 1px;
-    padding: 0.1rem 1rem;
-}
-
-#logo-cnpj-codigo > img{width: 80%;}
-
-#logo-cnpj-codigo > figcaption {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-#logo-cnpj-codigo > figcaption > p{font-size: var(--tamanho-texto-legenda);}
-
-#titulo-unidade h1, #unidade-input{
-    font-size: var(--tamanho-texto-titulo);
-}
-
-#setor-solicitante-data-ramal{
-    padding: 0 1rem;
-    justify-content: space-evenly;
-}
-
-#setor-solicitante-data-ramal > div {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-}
-
-#setor-solicitante-data-ramal > div > label {
-    flex: 2;
-    text-align: center;
-    padding: 2px;
-    background-color: var(--cor-wrapper-title-background);
-    color: var(--cor-wrapper-title-font);
-    font-weight: var(--peso-texto-wrapper-title);
-    font-size: var(--tamanho-texto-legenda);
-}
-
-#setor-solicitante-data-ramal > div > input {flex: 6;}
-
-#checklist-anexos .content{
-    justify-content: center;
-    padding: 0 0.3rem;
-}
-
-#checklist-anexos .title {font-size: var(--tamanho-texto-legenda);}
-
-#checklist-anexos > .content > label {font-size: var(--tamanho-texto-legenda);}
-
-/*Section servico-pagamento*/
-#servico-pagamento{grid-template-rows: repeat(16,1fr);}
-
-/*Section carimbos-conferencia*/
-
-#carimbo-gerencia-executiva{grid-column: 4 / span 6;}
-
-#servico-pagamento{height: 50%;}
-
-#carimbos-conferencia, #carimbos-aprovacao{grid-template-columns: repeat(12,1fr);}
-
-#carimbos-conferencia{height: 15%;}
-
-#carimbos-aprovacao{height: 7.5%;}
