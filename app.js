@@ -58,4 +58,4 @@ function loadDropdownItems (idDropdown, values = [] ,onClick = null) {
     }
 }
 
-loadDropdownItems('#lista-unidades', unidades.map(u => u.nome) );
+loadDropdownItems('#lista-unidades', unidades.map(u => u.nome));

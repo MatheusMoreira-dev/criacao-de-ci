@@ -287,24 +287,39 @@ textarea{
 .dropdown-container {
     position: relative;
     display: inline-block;
+
+    width: 100%;
+    max-width: 20dvw;
 }
 
 .dropdown-container > input {
-    width: auto;
-    padding: 5px;
+    padding: 2.5px 5px;
 }
 
 .dropdown-container > ul{
     border: 1px solid var(--cor-outline-dropdownlist);
     padding: 5px;
     width: 100%;
+    max-height: 20dvh;
+    min-width: 15dvw;
+    
+    overflow-y: auto;
+    overflow-x: none;
 
     display: none;
     position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
     z-index: 99999;
     background-color: white;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+}
+
+.dropdown-container > span {
+    visibility:hidden; 
+    position:absolute; 
+    white-space:pre;
 }
 
 .dropdown-container > input:focus + ul{
