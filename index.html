@@ -38,7 +38,7 @@
             <label class="" for="nome-setor">SETOR:</label>
             
             <div class="dropdown-container">
-              <input class="" id="nome-setor" type="text" value="MARKETING">
+              <input class="" id="nome-setor" type="text" readonly>
               <ul id="lista-setores"></ul>
               <span></span>
             </div>
@@ -48,20 +48,20 @@
             <label class="" for="nome-solicitante">SOLICITANTE:</label>
             
             <div class="dropdown-container">
-              <input class="" id="nome-solicitante" type="text" value="Matheus Moreira Marcelino"></input>
+              <input class="" id="nome-solicitante" type="text" readonly></input>
               <ul id="lista-colaboradores"></ul>
               <span></span>
             </div>
           </div>
 
-          <div class="">
+          <div>
             <label class="" for="data-solicitacao">SOLICITAÇÃO:</label>
-            <input class="" id="data-solicitacao" type="text" value= "11/08/2025">
+            <input class="" id="data-solicitacao" type="date" readonly>
           </div>
 
-          <div class="">
+          <div>
             <label class="" for="ramal">RAMAL:</label>
-            <input class="" id="ramal" type="text" value="2018">
+            <input class="" id="ramal" type="text" readonly>
           </div>
         </div>
 
@@ -111,7 +111,12 @@
       <section id="servico-pagamento">
         <div id="favorecido-nome" class="col-span-10 row-span-1 wrapper">
           <label class="title">FAVORECIDO</label>
-          <input class="content centralize"></input>
+
+          <div class="dropdown-container">
+            <input class="content centralize"></input>
+            <ul id="lista-unidades"></ul>
+            <span></span>
+          </div>
         </div>
 
         <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 wrapper horizontal">

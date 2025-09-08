@@ -37,6 +37,21 @@ const setores = [
     }
 ];
 
+const prestadores = [
+    {
+        'nomeEmpresarial': 'BSG',
+        'nomeFantasia': '',
+        'codigo': {
+            'cnpj': '',
+            'cpf': ''
+        },
+        'valorPadrao': '',
+        'descricaoPadrao': '',
+        'dataPadrao': '',
+        'pagamentoPadrao': '',
+    }
+]
+
 function selectItem (event) {
     const dropDown = event.target.parentNode.parentNode;
 
@@ -82,8 +97,13 @@ function selectUnidade (event) {
     codigo.textContent = item.codigo;
 }
 
-function selectUnidade () {
-    
+function selectSetor (event) {
+    document.querySelector('#lista-colaboradores').innerHTML = '';
+
+    let setor = setores.find(s => s.nome == event.target.textContent);
+    loadDropdownItems('#lista-colaboradores', setor.colaboradores);
+    document.querySelector('#ramal').value = setor.ramal;
 }
 
 loadDropdownItems('#lista-unidades', unidades.map(u => u.nome), selectUnidade);
+loadDropdownItems('#lista-setores', setores.map(u => u.nome), selectSetor);
