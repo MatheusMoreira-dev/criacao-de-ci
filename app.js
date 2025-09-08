@@ -24,23 +24,38 @@ const unidades = [
     }
 ]
 
-const listaUnidades = document.querySelector("#lista-unidades");
-const inputUnidade = document.querySelector("#unidade-input");
+function selectItem (event) {
+    const dropDown = event.target.parentNode.parentNode;
 
-function inserirUnidades(){
-    let item;
+    const input = dropDown.querySelector('input');
+    input.value = event.target.textContent;
 
-    unidades.forEach((u,i) => {
-        item = document.createElement('li');
-        item.textContent = u.nome;
-        item.value = i;
+    const span = dropDown.querySelector('span');
+    span.style.font = getComputedStyle(input).font;
+    span.textContent = input.value;
 
-        item.addEventListener("mousedown", function(event){
-            inputUnidade.value = event.target.textContent
-        });
-
-        listaUnidades.appendChild(item);
-    });
+    input.style.width = span.offsetWidth + 10 + "px";
 }
 
-window.addEventListener("load", inserirUnidades());
+function loadDropdownItems (idDropdown, values = [] ,onClick = null) {
+    let dropDown = document.querySelector(idDropdown);
+    let item;
+
+    for (let value of values){
+        item = document.createElement('li');
+        item.textContent = value;
+
+        if(onClick == null) {
+            item.addEventListener('mousedown', e => selectItem(e));
+        } else {
+            item.addEventListener('mousedown', function(e) {
+                selectItem(e);
+                onClick(e);
+            })
+        }
+
+        dropDown.appendChild(item);
+    }
+}
+
+loadDropdownItems('#lista-unidades', unidades.map(u => u.nome) );
