@@ -66,7 +66,6 @@ function selectItem (event) {
 
     input.style.width = span.offsetWidth + 10 + "px";
 }
-
 // Carregar no dropdown todos os itens
 function loadItems (dropDown, values = [] ,onClick = null) {
     let item;
@@ -87,7 +86,6 @@ function loadItems (dropDown, values = [] ,onClick = null) {
         dropDown.appendChild(item);
     }
 }
-
 // Funções executadas ao clicar em item do dropdown list específico
 // Dropdown de Unidades
 function selectUnidade (event) {
@@ -136,9 +134,16 @@ function createDropdown (obj = {}) {
     divContainer.appendChild(input);
     divContainer.appendChild(dropDown);
     divContainer.appendChild(span);
-
+    
     //Carregar Items
     loadItems(dropDown, obj.items, obj.onClick);
+
+    if (!obj.isInputReadOnly){
+        input.addEventListener('input', function() {
+            dropDown.innerHTML = '';
+            loadItems(dropDown, obj.items.filter(v => v.includes(input.value), obj.onClick))
+        });
+    }
     
     //Append no html
     document.getElementById(obj.idLocal).appendChild(divContainer);
@@ -151,7 +156,7 @@ const allDropdowns = [
         'idDropdown':  'lista-unidades',
         'items' : unidades.map(u => u.nome),
         'onClick': selectUnidade,
-        'isInputReadOnly': true
+        'isInputReadOnly': false
 
     }, 
 
