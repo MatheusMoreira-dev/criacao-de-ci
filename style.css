@@ -218,7 +218,6 @@ section > div {
 
     background-color: var(--cor-wrapper-title-background);
     color: var(--cor-wrapper-title-font);
-    padding: 0.1rem;
     font-weight: var(--peso-texto-wrapper-title);
 
     padding: 0.2rem 0.3rem;
@@ -235,6 +234,7 @@ section > div {
 
 .wrapper.horizontal .title{
     padding: 0 1rem !important;
+    flex: 0 0 15%;
 }
 
 input:hover, textarea:hover{
@@ -289,7 +289,10 @@ textarea{
     display: inline-block;
 
     width: 100%;
-    max-width: 20dvw;
+}
+
+.dropdown-container > input {
+    width: 100% !important;
 }
 
 .dropdown-container > ul{

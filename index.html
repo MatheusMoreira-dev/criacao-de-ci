@@ -25,12 +25,6 @@
 
         <div id="titulo-unidade" class="col-span-9 flex-col-center">
           <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
-
-          <div class="dropdown-container">
-            <input id="unidade-input" type="text" value="UNIMED CARIRI" class="centralize" readonly></input>
-            <ul id="lista-unidades"></ul>
-            <span></span>
-          </div>
         </div>
 
         <div id="setor-solicitante-data-ramal" class="col-span-7 flex-col">
@@ -56,7 +50,7 @@
 
           <div>
             <label class="" for="data-solicitacao">SOLICITAÇÃO:</label>
-            <input class="" id="data-solicitacao" type="date" readonly>
+            <input class="" id="data-solicitacao" type="date">
           </div>
 
           <div>
@@ -114,14 +108,19 @@
 
           <div class="dropdown-container">
             <input class="content centralize"></input>
-            <ul id="lista-unidades"></ul>
+            <ul id="lista-prestadores"></ul>
             <span></span>
           </div>
         </div>
 
         <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 wrapper horizontal">
           <label class="title">CPF/CNPJ:</label>
-          <input class="content centralize">
+          
+          <div class="dropdown-container">
+            <input id="cnpj-cpf" class="content centralize">
+            <ul id="lista-cnpj-ou-cpf"></ul>
+            <span></span>
+          </div>
         </div>
 
         <div id="servico-valor" class="col-span-7 row-span-1 wrapper">

@@ -39,11 +39,11 @@ const setores = [
 
 const prestadores = [
     {
-        'nomeEmpresarial': 'BSG',
-        'nomeFantasia': '',
+        'nomeEmpresarial': 'SUBLIME GRÁFICA LTDA',
+        'nomeFantasia': 'BSG',
         'codigo': {
-            'cnpj': '',
-            'cpf': ''
+            'cnpj': '12.12.12.12.12',
+            'cpf': '11.1.1.1.1.1.'
         },
         'valorPadrao': '',
         'descricaoPadrao': '',
@@ -52,6 +52,7 @@ const prestadores = [
     }
 ]
 
+// Selecionar item para o Input 
 function selectItem (event) {
     const dropDown = event.target.parentNode.parentNode;
 
@@ -66,8 +67,8 @@ function selectItem (event) {
     input.style.width = span.offsetWidth + 10 + "px";
 }
 
-function loadDropdownItems (idDropdown, values = [] ,onClick = null) {
-    let dropDown = document.querySelector(idDropdown);
+// Carregar no dropdown todos os itens
+function loadItems (dropDown, values = [] ,onClick = null) {
     let item;
 
     for (let value of values){
@@ -87,6 +88,8 @@ function loadDropdownItems (idDropdown, values = [] ,onClick = null) {
     }
 }
 
+// Funções executadas ao clicar em item do dropdown list específico
+// Dropdown de Unidades
 function selectUnidade (event) {
     const item = unidades.find(u => u.nome == event.target.textContent);
 
@@ -96,14 +99,83 @@ function selectUnidade (event) {
     const codigo = document.querySelector('#codigo-unidade');
     codigo.textContent = item.codigo;
 }
-
+// Dropdown de Setores
 function selectSetor (event) {
     document.querySelector('#lista-colaboradores').innerHTML = '';
 
     let setor = setores.find(s => s.nome == event.target.textContent);
-    loadDropdownItems('#lista-colaboradores', setor.colaboradores);
+    loadItems('#lista-colaboradores', setor.colaboradores);
     document.querySelector('#ramal').value = setor.ramal;
 }
+// Dropdown de Prestadores
+function selectPrestador (event) {
+    const prestador = prestadores.find(p => event.target.textContent.includes(p.nomeEmpresarial));
+    document.querySelector('#lista-cnpj-ou-cpf').innerHTML = '';
+    loadItems('#lista-cnpj-ou-cpf', Object.values(prestador.codigo));
+}
+// Criar dropdown container
+function createDropdown (obj = {}) {
+    // Container
+    const divContainer = document.createElement('div');
+    divContainer.id = obj.idDropdown;
+    divContainer.classList.add('dropdown-container');
 
-loadDropdownItems('#lista-unidades', unidades.map(u => u.nome), selectUnidade);
-loadDropdownItems('#lista-setores', setores.map(u => u.nome), selectSetor);
+    // Input
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.readOnly = obj.isInputReadOnly;
+
+    // Dropdown
+    const dropDown = document.createElement('ul');
+    dropDown.id = `${obj.idDropdown + "-list"}`;
+
+    //Span
+    const span = document.createElement('span');
+    
+    //Inserir no container
+    divContainer.appendChild(input);
+    divContainer.appendChild(dropDown);
+    divContainer.appendChild(span);
+
+    //Carregar Items
+    loadItems(dropDown, obj.items, obj.onClick);
+    
+    //Append no html
+    document.getElementById(obj.idLocal).appendChild(divContainer);
+    return divContainer;
+}
+
+const allDropdowns = [
+    {
+        'idLocal' : 'titulo-unidade',
+        'idDropdown':  'lista-unidades',
+        'items' : unidades.map(u => u.nome),
+        'onClick': selectUnidade,
+        'isInputReadOnly': true
+
+    }, 
+
+    {
+        'idLocal' : '',
+        'idDropdown':  '',
+        'items' : [],
+        'onClick': '',
+        'isInputReadOnly': true
+
+    },
+
+    {
+        'idLocal' : '',
+        'idDropdown':  '',
+        'items' : [],
+        'onClick': '',
+        'isInputReadOnly': true
+
+    },
+]; 
+
+createDropdown(allDropdowns[0]);
+
+loadItems('#lista-unidades', unidades.map(u => u.nome), selectUnidade);
+loadItems('#lista-setores', setores.map(s => s.nome), selectSetor);
+loadItems('#lista-prestadores', prestadores.map(p => p.nomeEmpresarial + " - " + p.nomeFantasia), selectPrestador);
