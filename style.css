@@ -111,8 +111,19 @@ section > div {
     font-size: var(--tamanho-texto-legenda);
 }
 
-#titulo-unidade h1, #unidade-input{
+#titulo-unidade h1, #titulo-unidade input{
     font-size: var(--tamanho-texto-titulo);
+}
+
+#titulo-unidade{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+#drop-prestadores > input{
+    padding: 0.5rem;
 }
 
 #setor-solicitante-data-ramal{
@@ -200,9 +211,15 @@ section > div {
 }
 
 .centralize{
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.expand{
+    width: 100%;
+    height: 100%;
 }
 
 /*Wrapper*/
@@ -291,8 +308,13 @@ textarea{
     width: 100%;
 }
 
-.dropdown-container.center > input, .dropdown-container.center li{
+.dropdown-container.centralize > input, .dropdown-container.centralize li{
     text-align: center;
+}
+
+.dropdown-container.expand > input, .dropdown-container.expand li{
+    width: 100%;
+    height: 100%;
 }
 
 .dropdown-container > input {
@@ -337,5 +359,40 @@ textarea{
 
 .dropdown-container >ul li:hover{
     background-color: var(--cor-background-input-hover-and-focus);
+    cursor: pointer;
+}
+
+footer{
+    position: fixed;
+    z-index: 9999;
+    bottom: 0%;
+
+    height: 5%;
+    width: 100%;
+    background-color: rgba(0,0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.menu-acoes{
+    display: flex;
+    margin-right: 5rem;
+    gap: 3rem;
+    height: 100%;
+}
+
+.menu-acoes li, .menu-acoes button{
+    height: 100%;
+}
+.menu-acoes button{
+    padding: 1px;
+    width: 7dvw;
+    border-radius: 3.5dvw;
+}
+
+.menu-acoes button:hover{
     cursor: pointer;
 }

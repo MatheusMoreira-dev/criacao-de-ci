@@ -11,7 +11,15 @@
   </head>
 
   <body>
-    <header></header>
+    <header>
+      <nav>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
 
     <main class="folha-a4">
       <section id="contratante">
@@ -26,7 +34,7 @@
 
         <div id="titulo-unidade" class="col-span-9 flex-col-center">
           <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
-          <div id="drop-unidades" class="center"></div>
+          <div id="drop-unidades" class="centralize"></div>
         </div>
 
         <div id="setor-solicitante-data-ramal" class="col-span-7 flex-col">
@@ -97,12 +105,12 @@
       <section id="servico-pagamento">
         <div id="favorecido-nome" class="col-span-10 row-span-1 wrapper">
           <label class="title">FAVORECIDO</label>
-          <div id="drop-prestadores" class="center"></div>
+          <div id="drop-prestadores" class="centralize expand"></div>
         </div>
 
         <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 wrapper horizontal">
           <label class="title">CPF/CNPJ:</label>
-          <div id="drop-cnpj-cpf" class="center"></div>
+          <div id="drop-cnpj-cpf" class="centralize expand"></div>
         </div>
 
         <div id="servico-valor" class="col-span-7 row-span-1 wrapper">
@@ -214,7 +222,13 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <ul class="menu-acoes">
+        <li><button>Gravar</button></li>
+        <li><button>Baixar PDF</button></li>
+        <li><button>Imprimir</button></li>
+      </ul>
+    </footer>
     <script defer src="./app.js"></script>
   </body>
 </html>

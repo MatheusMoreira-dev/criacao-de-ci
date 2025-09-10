@@ -87,7 +87,9 @@ function loadItems (dropDown, values = [] ,onClick = null) {
     }
 } 
 // Criar dropdown container
-function createDropdown (idContainer, {items = [], isSearchable = false, onClick}) {
+function createDropdown (idContainer, {items = [], isSearchable = false, onClick, label}) {
+    let childs = [];
+    
     // Container
     const container = document.getElementById(idContainer);
     container.classList.add('dropdown-container');
@@ -97,6 +99,14 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     input.type = 'text';
     input.id = `${container.id}-input`
     input.readOnly = !isSearchable;
+    input.autocomplete= "off";
+
+    //Label
+    if(label != undefined){
+        const tagLabel = document.createElement('label');
+        tagLabel.textContent = label;
+        tagLabel.setAttribute('for', input.id);
+    }
 
     // Dropdown
     const dropDown = document.createElement('ul');
@@ -113,7 +123,7 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     const span = document.createElement('span');
     
     //Inserir no container
-    [input,dropDown,span].forEach(c => container.appendChild(c));
+    childs.concat([input,dropDown,span]).forEach(c => container.appendChild(c));
     
     //Carregar Items
     loadItems(dropDown, items, onClick);
