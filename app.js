@@ -178,15 +178,16 @@ createDropdown('drop-prestadores', {
 
 function checkitem({label}){
     const container = document.createElement('label');
+    const textLabel = document.createTextNode(label);
+
     container.classList.add('checkitem');
     
     const input = document.createElement('input');
     input.type = 'checkbox';
     
     const span = document.createElement('span');
-    [input,span].forEach(e => container.appendChild(e));
+    [input,span,textLabel].forEach(e => container.appendChild(e));
     
-    container.textContent = label;
     return container;
 }
 
