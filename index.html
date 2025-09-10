@@ -23,7 +23,7 @@
 
     <main class="folha-a4">
       <section id="contratante">
-        <div id="logo-cnpj-codigo" class="col-span-3 flex-col-center">
+        <div id="logo-cnpj-codigo" class="col-span-3 flex-col centralize">
           <img src="./assets/unimed-cariri-logo.png" alt="Logo Unimed"/>
           
           <figcaption>
@@ -32,73 +32,27 @@
           </figcaption>
         </div>
 
-        <div id="titulo-unidade" class="col-span-9 flex-col-center">
+        <div id="titulo-unidade" class="col-span-9 flex-col centralize">
           <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
           <div id="drop-unidades" class="centralize"></div>
         </div>
 
         <div id="setor-solicitante-data-ramal" class="col-span-7 flex-col">
+          <div id="drop-setores"></div>
+          <div id="drop-colaboradores"></div>
           <div>
-            <label>SETOR:</label>
-            <div id="drop-setores"></div>
+            <label for="data-solicitacao">SOLICITAÇÃO:</label>
+            <input id="data-solicitacao" type="date">
           </div>
-
           <div>
-            <label class="" for="nome-solicitante">SOLICITANTE:</label>
-            <div id="drop-colaboradores"></div>
-          </div>
-
-          <div>
-            <label class="" for="data-solicitacao">SOLICITAÇÃO:</label>
-            <input class="" id="data-solicitacao" type="date">
-          </div>
-
-          <div>
-            <label class="" for="ramal">RAMAL:</label>
-            <input class="" id="ramal" type="text" readonly>
+            <label for="ramal">RAMAL:</label>
+            <input id="ramal" type="text" readonly>
           </div>
         </div>
 
         <div id="checklist-anexos" class="col-span-5 wrapper">
           <p class="title">Documentos Anexados</p>
-
-          <form class="content flex-col">
-            <label class="checkitem tiny">
-              <input type="checkbox">
-              <span></span>
-              Nota Fiscal ou Recibo
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Orçamento Aprovado
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Ordem de Pagamento/Recisões/indenizações
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Contrato Assinado/Pagamento Mensal
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Acordo Judicial
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Água/Luz/Telefone/Celular/Internet/Tributos
-            </label>
-            <label class="checkitem tiny">
-                <input type="checkbox">
-                <span class="checkmark tiny-checkmark"></span>
-                Outros: _________________
-            </label>
-          </form>
+          <form id="check-anexos" class="content flex-col"></form>
         </div>
       </section>
 
@@ -129,7 +83,7 @@
         </div>
 
         <div id="forma-de-pagamento" class="col-span-10 row-span-5 wrapper vertical">
-          <label class="title">FORMA DE PAGAMENTO</label>
+          <p class="title">FORMA DE PAGAMENTO</p>
 
           <form class="content">
             <div class="tipos-de-pagamento flex-col">

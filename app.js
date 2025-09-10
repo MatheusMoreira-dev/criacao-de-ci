@@ -106,6 +106,7 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
         const tagLabel = document.createElement('label');
         tagLabel.textContent = label;
         tagLabel.setAttribute('for', input.id);
+        childs.push(tagLabel);
     }
 
     // Dropdown
@@ -146,12 +147,14 @@ createDropdown('drop-unidades',{
 
 createDropdown('drop-setores', {
     items: setores.map(s => s.nome),
+    label:"SETOR:",
     onClick: function (event) {
         document.querySelector('#drop-colaboradores').innerHTML = '';
         let setor = setores.find(s => s.nome == event.target.textContent);
         
         createDropdown('drop-colaboradores', {
             items: setor.colaboradores,
+            label: "SOLICITANTE:",
             isSearchable: true
         })
         document.querySelector('#ramal').value = setor.ramal;
@@ -172,3 +175,37 @@ createDropdown('drop-prestadores', {
         console.log(Object.values(prestador.codigo));
     }
 });
+
+function checkitem({label}){
+    const container = document.createElement('label');
+    container.classList.add('checkitem');
+    
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    
+    const span = document.createElement('span');
+    [input,span].forEach(e => container.appendChild(e));
+    
+    container.textContent = label;
+    return container;
+}
+
+function checklist({ id = '',items = []}){
+    const container = document.getElementById(id);
+    container.classList.add('checklist');
+
+    items.forEach(i => container.appendChild(i));
+}
+
+checklist({
+    id: 'check-anexos',
+    items: [
+        checkitem({label: 'Nota Fiscal ou Recibo'}),
+        checkitem({label: 'Orçamento Aprovado'}),
+        checkitem({label: 'Ordem de Pagamento/Recisões/indenizações'}),
+        checkitem({label: 'Contrato Assinado/Pagamento Mensal'}),
+        checkitem({label: 'Acordo Judicial'}),
+        checkitem({label: 'Água/Luz/Telefone/Celular/Internet/Tributos'}),
+        checkitem({label: 'Outros: _________________'})
+    ]
+})
