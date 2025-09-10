@@ -85,102 +85,80 @@ function loadItems (dropDown, values = [] ,onClick = null) {
 
         dropDown.appendChild(item);
     }
-}
-// Funções executadas ao clicar em item do dropdown list específico
-// Dropdown de Unidades
-function selectUnidade (event) {
-    const item = unidades.find(u => u.nome == event.target.textContent);
-
-    const cnpj = document.querySelector('#cnpj-unidade');
-    cnpj.textContent = item.cnpj;
-
-    const codigo = document.querySelector('#codigo-unidade');
-    codigo.textContent = item.codigo;
-}
-// Dropdown de Setores
-function selectSetor (event) {
-    document.querySelector('#lista-colaboradores').innerHTML = '';
-
-    let setor = setores.find(s => s.nome == event.target.textContent);
-    loadItems('#lista-colaboradores', setor.colaboradores);
-    document.querySelector('#ramal').value = setor.ramal;
-}
-// Dropdown de Prestadores
-function selectPrestador (event) {
-    const prestador = prestadores.find(p => event.target.textContent.includes(p.nomeEmpresarial));
-    document.querySelector('#lista-cnpj-ou-cpf').innerHTML = '';
-    loadItems('#lista-cnpj-ou-cpf', Object.values(prestador.codigo));
-}
+} 
 // Criar dropdown container
-function createDropdown (obj = {}) {
+function createDropdown (idContainer, {items = [], isSearchable = false, onClick}) {
     // Container
-    const divContainer = document.createElement('div');
-    divContainer.id = obj.idDropdown;
-    divContainer.classList.add('dropdown-container');
+    const container = document.getElementById(idContainer);
+    container.classList.add('dropdown-container');
 
     // Input
     const input = document.createElement('input');
     input.type = 'text';
-    input.readOnly = obj.isInputReadOnly;
+    input.id = `${container.id}-input`
+    input.readOnly = !isSearchable;
 
     // Dropdown
     const dropDown = document.createElement('ul');
-    dropDown.id = `${obj.idDropdown + "-list"}`;
+    dropDown.id = `${container.id + "-list"}`;
+
+    if (isSearchable){
+        input.addEventListener('input', function() {
+            dropDown.innerHTML = '';
+            loadItems(dropDown, items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()), onClick))
+        });
+    }
 
     //Span
     const span = document.createElement('span');
     
     //Inserir no container
-    divContainer.appendChild(input);
-    divContainer.appendChild(dropDown);
-    divContainer.appendChild(span);
+    [input,dropDown,span].forEach(c => container.appendChild(c));
     
     //Carregar Items
-    loadItems(dropDown, obj.items, obj.onClick);
-
-    if (!obj.isInputReadOnly){
-        input.addEventListener('input', function() {
-            dropDown.innerHTML = '';
-            loadItems(dropDown, obj.items.filter(v => v.includes(input.value), obj.onClick))
-        });
-    }
+    loadItems(dropDown, items, onClick);
     
-    //Append no html
-    document.getElementById(obj.idLocal).appendChild(divContainer);
-    return divContainer;
+    return container;
 }
 
-const allDropdowns = [
-    {
-        'idLocal' : 'titulo-unidade',
-        'idDropdown':  'lista-unidades',
-        'items' : unidades.map(u => u.nome),
-        'onClick': selectUnidade,
-        'isInputReadOnly': false
+createDropdown('drop-unidades',{
+    items: unidades.map(u => u.nome),
+    onClick: function (event) {
+        const item = unidades.find(u => u.nome == event.target.textContent);
 
-    }, 
+        const cnpj = document.querySelector('#cnpj-unidade');
+        cnpj.textContent = item.cnpj;
 
-    {
-        'idLocal' : '',
-        'idDropdown':  '',
-        'items' : [],
-        'onClick': '',
-        'isInputReadOnly': true
+        const codigo = document.querySelector('#codigo-unidade');
+        codigo.textContent = item.codigo;
+    }
+});
 
-    },
+createDropdown('drop-setores', {
+    items: setores.map(s => s.nome),
+    onClick: function (event) {
+        document.querySelector('#drop-colaboradores').innerHTML = '';
+        let setor = setores.find(s => s.nome == event.target.textContent);
+        
+        createDropdown('drop-colaboradores', {
+            items: setor.colaboradores,
+            isSearchable: true
+        })
+        document.querySelector('#ramal').value = setor.ramal;
+    }
+});
 
-    {
-        'idLocal' : '',
-        'idDropdown':  '',
-        'items' : [],
-        'onClick': '',
-        'isInputReadOnly': true
+createDropdown('drop-prestadores', {
+    items: prestadores.map(p => `${p.nomeEmpresarial} - ${p.nomeFantasia}`),
+    isSearchable: true,
+    onClick: function (event) {
+        document.querySelector('#drop-cnpj-cpf').innerHTML = '';
+        const prestador = prestadores.find(p => event.target.textContent.includes(p.nomeEmpresarial));
 
-    },
-]; 
+        createDropdown('drop-cnpj-cpf', {
+            items: Object.values(prestador.codigo)
+        });
 
-createDropdown(allDropdowns[0]);
-
-loadItems('#lista-unidades', unidades.map(u => u.nome), selectUnidade);
-loadItems('#lista-setores', setores.map(s => s.nome), selectSetor);
-loadItems('#lista-prestadores', prestadores.map(p => p.nomeEmpresarial + " - " + p.nomeFantasia), selectPrestador);
+        console.log(Object.values(prestador.codigo));
+    }
+});

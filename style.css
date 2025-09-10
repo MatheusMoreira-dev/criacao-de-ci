@@ -291,6 +291,10 @@ textarea{
     width: 100%;
 }
 
+.dropdown-container.center > input, .dropdown-container.center li{
+    text-align: center;
+}
+
 .dropdown-container > input {
     width: 100% !important;
 }
