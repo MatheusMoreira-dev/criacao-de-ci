@@ -33,26 +33,15 @@
     --peso-texto-wrapper-title: bold;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #d9d9d9;
-}
+body{background-color: #d9d9d9;}
 
 .folha-a4{
     width: 210mm;
+    max-width: 60dvw;
     height: 297mm;
-
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-
     border: 1px solid black;
     padding: 1.5cm 1cm 3cm 1.5cm;
-
     background-color: white;
 }
 
@@ -60,18 +49,18 @@ body{
 section{
     display: grid;
     grid-template-columns: repeat(10,1fr);
+    grid-auto-rows: minmax(3rem, auto) ;
     gap: 1px;
-
     position: relative;
 }
 
-#contratante{
+section#contratante{
     grid-template-columns: repeat(12,1fr);
     max-height: 18%;
     height: auto;
 }
 
-#servico-pagamento{
+section#servico-pagamento{
     height: 50%;
     grid-template-rows: repeat(16,1fr);
 }
@@ -193,11 +182,12 @@ section > div {
     display: flex;
 }
 
-.centralize{
+.flex-center{
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
+
+.text-center{text-align: center;}
 
 .expand{
     width: 100%;
@@ -288,7 +278,7 @@ textarea{
     width: 100%;
 }
 
-.dropdown-container.centralize > input, .dropdown-container.centralize li{
+.dropdown-container.flex-center > input, .dropdown-container.flex-center li{
     text-align: center;
 }
 
