@@ -48,6 +48,10 @@
     align-items: center;
 }
 
+.space-between{justify-content: space-between;}
+
+.space-evenly{justify-content: space-evenly;}
+
 .text-center{text-align: center;}
 
 .tiny-text{font-size: var(--tamanho-texto-legenda);}
@@ -76,19 +80,6 @@
 .row-span-6{grid-row: auto / span 6;}
 
 /*---------------------------------Componentes reutilizáveis---------------------------------*/
-#checklist-anexos .content{
-    justify-content: center;
-    padding: 0 0.3rem;
-}
-
-#checklist-anexos .title {
-    font-size: var(--tamanho-texto-legenda);
-}
-
-#checklist-anexos > .content > label {
-    font-size: var(--tamanho-texto-legenda);
-}
-
 .box *{font-size: inherit;}
 
 .box-title{
@@ -100,54 +91,9 @@
 
 .box-content{padding: 0.5rem;}
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--cor-wrapper-title-background);
-    color: var(--cor-wrapper-title-font);
-    font-weight: var(--peso-texto-wrapper-title);
-
-    padding: 0.2rem 0.3rem;
-}
-
-.wrapper .content {
-    flex: 1;
-    padding: 0.5rem;
-}
-
-.wrapper.horizontal{
-    flex-direction: row !important;
-}
-
-.wrapper.horizontal .title{
-    padding: 0 1rem !important;
-    flex: 0 0 15%;
-}
-
-input:hover, textarea:hover{
-    background-color: var(--cor-background-input-hover-and-focus);
-    cursor: pointer;
-}
-
-input.border {
-    border: 1px solid black;
-}
-
-input:focus, textarea:focus{
-    background-color: var(--cor-background-input-hover-and-focus);
-    font-size: var(--tamanho-texto-leitura);
-}
-
-textarea{
-    resize: none;
-    text-align: center;
+.carimbo{
+    display: inline-block;
+    height: 15%;
 }
 
 .checkitem input{
@@ -243,7 +189,6 @@ body{background-color: #d9d9d9;}
 
 .folha-a4{
     width: 210mm;
-    max-width: 60dvw;
     height: 297mm;
     justify-content: space-between;
     border: 1px solid black;
@@ -262,6 +207,22 @@ section{
 section > div {
     outline: 1px solid var(--cor-div-inside-section-line);
     position: relative;
+}
+
+input:hover, textarea:hover{
+    background-color: var(--cor-background-input-hover-and-focus);
+    cursor: pointer;
+}
+
+input.border {
+    border: 1px solid black;
+}
+
+input:focus, textarea:focus{background-color: var(--cor-background-input-hover-and-focus);}
+
+textarea{
+    resize: none;
+    text-align: center;
 }
 
 /*---------------------------------Regras Específicas---------------------------------*/
@@ -315,10 +276,6 @@ section#servico-pagamento{
 
 #carimbos-conferencia, #carimbos-aprovacao{
     grid-template-columns: repeat(12,1fr);
-}
-
-#carimbos-conferencia{
-    height: 15%;
 }
 
 #carimbos-aprovacao{
