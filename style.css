@@ -72,13 +72,6 @@
 .col-span-9{grid-column: auto / span 9;}
 .col-span-10{grid-column: auto / span 10;}
 
-.row-span-1{grid-row: auto / span 1;}
-.row-span-2{grid-row: auto / span 2;}
-.row-span-3{grid-row: auto / span 3;}
-.row-span-4{grid-row: auto / span 4;}
-.row-span-5{grid-row: auto / span 5;}
-.row-span-6{grid-row: auto / span 6;}
-
 /*---------------------------------Componentes reutilizáveis---------------------------------*/
 .box *{font-size: inherit;}
 
@@ -267,26 +260,16 @@ section#contratante{min-height: 18%;}
 #setor-solicitante-data-ramal input {flex: 1;}
 
 /*Seção de Pagamento*/
-section#servico-pagamento{
-    height: 50%;
-    grid-template-rows: repeat(16,1fr);
-}
+section#servico-pagamento{height: 50%;}
 
 #favorecido-cpf-cnpj .box-title{flex: 0 0 15%;}
 
-#carimbos-conferencia, #carimbos-aprovacao{
-    grid-template-columns: repeat(12,1fr);
-}
+/*Seção de Carimbos de Conferência*/
 
-#carimbos-aprovacao{
-    height: 7.5%;
-}
+#carimbos-aprovacao{height: 7.5%;}
 
 /*Div´s (box) das Section´s*/
 
-#carimbo-gerencia-executiva{
-    grid-column: 4 / span 6;
-}
 
 footer{
     position: fixed;
