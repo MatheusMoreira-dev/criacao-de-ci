@@ -87,7 +87,7 @@ function loadItems (dropDown, values = [] ,onClick = null) {
     }
 } 
 // Criar dropdown container
-function createDropdown (idContainer, {items = [], isSearchable = false, onClick, label}) {
+function createDropdown (idContainer, {items = [], isSearchable = false, onClick}) {
     let childs = [];
     
     // Container
@@ -100,14 +100,6 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     input.id = `${container.id}-input`
     input.readOnly = !isSearchable;
     input.autocomplete= "off";
-
-    //Label
-    if(label != undefined){
-        const tagLabel = document.createElement('label');
-        tagLabel.textContent = label;
-        tagLabel.setAttribute('for', input.id);
-        childs.push(tagLabel);
-    }
 
     // Dropdown
     const dropDown = document.createElement('ul');

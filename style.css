@@ -33,126 +33,28 @@
     --peso-texto-wrapper-title: bold;
 }
 
-body{background-color: #d9d9d9;}
-
-.folha-a4{
-    width: 210mm;
-    max-width: 60dvw;
-    height: 297mm;
-    justify-content: space-between;
-    border: 1px solid black;
-    padding: 1.5cm 1cm 3cm 1.5cm;
-    background-color: white;
-}
-
-/*Section´s*/
-section{
-    display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-auto-rows: minmax(3rem, auto) ;
-    gap: 1px;
-    position: relative;
-}
-
-section#contratante{
-    grid-template-columns: repeat(12,1fr);
-    max-height: 18%;
-    height: auto;
-}
-
-section#servico-pagamento{
-    height: 50%;
-    grid-template-rows: repeat(16,1fr);
-}
-
-#carimbos-conferencia, #carimbos-aprovacao{
-    grid-template-columns: repeat(12,1fr);
-}
-
-#carimbos-conferencia{
-    height: 15%;
-}
-
-#carimbos-aprovacao{
-    height: 7.5%;
-}
-
-/*Div´s (box) das Section´s*/
-section > div {
-    outline: 1px solid var(--cor-div-inside-section-line);
-    position: relative;
-}
-
-#logo-cnpj-codigo{
-    gap: 1px;
-    padding: 0.1rem 1rem;
-}
-
-#logo-cnpj-codigo > img{
-    width: 80%;
-}
-
-#logo-cnpj-codigo > figcaption {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-#logo-cnpj-codigo > figcaption > p{
-    font-size: var(--tamanho-texto-legenda);
-}
-
-#titulo-unidade h1, #titulo-unidade input{
-    font-size: var(--tamanho-texto-titulo);
-}
-
-#titulo-unidade{
+/*---------------------------------Utilitários---------------------------------*/
+.flex-col{
     display: flex;
     flex-direction: column;
-
-    justify-content: space-evenly;
 }
 
-#setor-solicitante-data-ramal{
-    padding: 0 1rem;
-    justify-content: space-evenly;
-}
-
-#setor-solicitante-data-ramal > div {
+.flex-row{
     display: flex;
-    gap: 1rem;
-    width: 100%;
 }
 
-#setor-solicitante-data-ramal > div > label {
-    flex: 0 0 30%;
-    text-align: center;
-    padding: 2px;
-    background-color: var(--cor-wrapper-title-background);
-    color: var(--cor-wrapper-title-font);
-    font-weight: var(--peso-texto-wrapper-title);
-    font-size: var(--tamanho-texto-legenda);
-}
-
-#setor-solicitante-data-ramal > div > input {
-    flex: 1;
-}
-
-#checklist-anexos .content{
+.flex-center{
     justify-content: center;
-    padding: 0 0.3rem;
+    align-items: center;
 }
 
-#checklist-anexos .title {
-    font-size: var(--tamanho-texto-legenda);
-}
+.text-center{text-align: center;}
 
-#checklist-anexos > .content > label {
-    font-size: var(--tamanho-texto-legenda);
-}
+.tiny-text{font-size: var(--tamanho-texto-legenda);}
 
-#carimbo-gerencia-executiva{
-    grid-column: 4 / span 6;
+.expand{
+    width: 100%;
+    height: 100%;
 }
 
 .col-span-1{grid-column: auto / span 1;}
@@ -173,28 +75,31 @@ section > div {
 .row-span-5{grid-row: auto / span 5;}
 .row-span-6{grid-row: auto / span 6;}
 
-.flex-col{
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row{
-    display: flex;
-}
-
-.flex-center{
+/*---------------------------------Componentes reutilizáveis---------------------------------*/
+#checklist-anexos .content{
     justify-content: center;
-    align-items: center;
+    padding: 0 0.3rem;
 }
 
-.text-center{text-align: center;}
-
-.expand{
-    width: 100%;
-    height: 100%;
+#checklist-anexos .title {
+    font-size: var(--tamanho-texto-legenda);
 }
 
-/*Wrapper*/
+#checklist-anexos > .content > label {
+    font-size: var(--tamanho-texto-legenda);
+}
+
+.box *{font-size: inherit;}
+
+.box-title{
+    background-color: var(--cor-wrapper-title-background);
+    color: var(--cor-wrapper-title-font);
+    font-weight: var(--peso-texto-wrapper-title);
+    padding: 0.2rem;
+}
+
+.box-content{padding: 0.5rem;}
+
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -331,6 +236,99 @@ textarea{
 .dropdown-container >ul li:hover{
     background-color: var(--cor-background-input-hover-and-focus);
     cursor: pointer;
+}
+
+/*---------------------------------Regras gerais---------------------------------*/
+body{background-color: #d9d9d9;}
+
+.folha-a4{
+    width: 210mm;
+    max-width: 60dvw;
+    height: 297mm;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 1.5cm 1cm 3cm 1.5cm;
+    background-color: white;
+}
+
+section{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-auto-rows: minmax(3rem, auto) ;
+    gap: 1px;
+    position: relative;
+}
+
+section > div {
+    outline: 1px solid var(--cor-div-inside-section-line);
+    position: relative;
+}
+
+/*---------------------------------Regras Específicas---------------------------------*/
+
+/*Seção de Contratante*/
+section#contratante{min-height: 18%;}
+
+#logo-cnpj-codigo{
+    gap: 1px;
+    padding: 0.1rem 1rem;
+}
+
+#logo-cnpj-codigo > img{
+    width: 80%;
+}
+
+#logo-cnpj-codigo > figcaption {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#titulo-unidade h1, #titulo-unidade input{
+    font-size: var(--tamanho-texto-titulo);
+}
+
+#titulo-unidade{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+#setor-solicitante-data-ramal{
+    justify-content: space-between;
+}
+
+#setor-solicitante-data-ramal .box{gap: 1rem;}
+
+#setor-solicitante-data-ramal .box-title{flex: 0 0 30%;}
+
+#setor-solicitante-data-ramal input {flex: 1;}
+
+/*Seção de Pagamento*/
+section#servico-pagamento{
+    height: 50%;
+    grid-template-rows: repeat(16,1fr);
+}
+
+#favorecido-cpf-cnpj .box-title{flex: 0 0 15%;}
+
+#carimbos-conferencia, #carimbos-aprovacao{
+    grid-template-columns: repeat(12,1fr);
+}
+
+#carimbos-conferencia{
+    height: 15%;
+}
+
+#carimbos-aprovacao{
+    height: 7.5%;
+}
+
+/*Div´s (box) das Section´s*/
+
+#carimbo-gerencia-executiva{
+    grid-column: 4 / span 6;
 }
 
 footer{

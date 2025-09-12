@@ -23,53 +23,59 @@
 
     <main class="folha-a4 flex-col">
       <section id="contratante">
-        <div id="logo-cnpj-codigo" class="col-span-3 flex-col centralize">
+        <div id="logo-cnpj-codigo" class="col-span-3 flex-col flex-center">
           <img src="./assets/unimed-cariri-logo.png" alt="Logo Unimed"/>
           
           <figcaption>
-            <p id="cnpj-unidade"></p>
-            <p id="codigo-unidade"></p>
+            <p id="cnpj-unidade" class="tiny-text"></p>
+            <p id="codigo-unidade" class="tiny-text"></p>
           </figcaption>
         </div>
 
-        <div id="titulo-unidade" class="col-span-9 flex-col centralize">
+        <div id="titulo-unidade" class="col-span-7 flex-col flex-center">
           <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
-          <div id="drop-unidades" class="centralize"></div>
+          <div id="drop-unidades" class="flex-center"></div>
         </div>
 
-        <div id="setor-solicitante-data-ramal" class="col-span-7 flex-col">
-          <div id="drop-setores"></div>
-          <div id="drop-colaboradores"></div>
-          <div>
-            <label for="data-solicitacao">SOLICITAÇÃO:</label>
+        <div id="setor-solicitante-data-ramal" class="col-span-6 flex-col box-content">
+          <div class="box flex-row tiny-text">
+            <label class="box-title text-center">SETOR:</label>
+            <div id="drop-setores"></div>
+          </div>
+          <div class="box flex-row tiny-text">
+            <label class="box-title text-center">SOLICITANTE:</label>
+            <div id="drop-colaboradores"></div>
+          </div>
+          <div class="box flex-row tiny-text">
+            <label for="data-solicitacao" class="box-title text-center">SOLICITAÇÃO:</label>
             <input id="data-solicitacao" type="date">
           </div>
-          <div>
-            <label for="ramal">RAMAL:</label>
+          <div class="box flex-row tiny-text">
+            <label for="ramal" class="box-title text-center">RAMAL:</label>
             <input id="ramal" type="text" readonly>
           </div>
         </div>
 
-        <div id="checklist-anexos" class="col-span-5 wrapper">
-          <p class="title">Documentos Anexados</p>
-          <form id="check-anexos" class="content flex-col"></form>
+        <div id="checklist-anexos" class="col-span-4 box tiny-text">
+          <p class="box-title text-center">Documentos Anexados</p>
+          <form id="check-anexos" class="box-content flex-col"></form>
         </div>
       </section>
 
       <section id="servico-pagamento">
-        <div id="favorecido-nome" class="col-span-10 row-span-1 wrapper">
-          <label class="title">FAVORECIDO</label>
-          <div id="drop-prestadores" class="centralize expand"></div>
+        <div id="favorecido-nome" class="col-span-10 row-span-1 box flex-col text-center">
+          <label class="box-title">FAVORECIDO</label>
+          <div id="drop-prestadores" class="box-content flex-center"></div>
         </div>
 
-        <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 wrapper horizontal">
-          <label class="title">CPF/CNPJ:</label>
-          <div id="drop-cnpj-cpf" class="centralize expand"></div>
+        <div id="favorecido-cpf-cnpj" class="col-span-10 row-span-1 box flex-row">
+          <label class="box-title flex-col flex-center">CPF/CNPJ:</label>
+          <div id="drop-cnpj-cpf" class="box-content flex-center expand"></div>
         </div>
 
-        <div id="servico-valor" class="col-span-7 row-span-1 wrapper">
-          <label class="title">VALOR (R$)</label>
-          <input type="number" class="content centralize">
+        <div id="servico-valor" class="col-span-7 row-span-1 box flex-col text-center">
+          <label class="box-title">VALOR (R$)</label>
+          <input type="number" class="box-content text-center">
         </div>
 
         <div id="data-pagamento" class="col-span-3 row-span-1 wrapper">
@@ -182,7 +188,7 @@
         <li><button>Imprimir</button></li>
       </ul>
     </footer>
-    
+
     <script defer src="./app.js"></script>
   </body>
 </html>
