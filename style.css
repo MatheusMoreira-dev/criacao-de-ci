@@ -256,9 +256,11 @@ section#contratante{min-height: 18%;}
 
 #favorecido-cpf-cnpj .box-title{flex: 0 0 15%;}
 
+#descricao-servico > textarea{height: 7rem;}
+
 /*Seção de Carimbos de Conferência*/
 
-#carimbos-aprovacao{height: 7.5%;}
+#carimbo-gerencia-executiva{grid-column: 4 /span 6;}
 
 footer{
     position: fixed;
