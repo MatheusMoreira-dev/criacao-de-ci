@@ -51,6 +51,11 @@ const prestadores = [
         'pagamentoPadrao': '',
     }
 ]
+const today = new Date();
+const dateToString = (date = today) => date.toISOString().split("T")[0]; 
+
+document.getElementById('data-solicitacao').value = dateToString();
+document.getElementById('data-limite-pagamento').value = dateToString();
 
 import {createDropdown} from './scripts/dropdown.js';
 import {createChecklist, checkitem} from './scripts/checklist.js';
