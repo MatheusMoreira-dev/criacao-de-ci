@@ -75,12 +75,15 @@
 
         <div id="servico-valor" class="col-span-8 box flex-col text-center">
           <label class="box-title">VALOR (R$)</label>
-          <input type="number" class="box-content text-center">
+          <div class="flex-row flex-center">
+            <p>R$</p>
+            <input type="number" class="box-content text-center">
+          </div>
         </div>
 
         <div id="data-pagamento" class="col-span-4 box flex-col">
-          <span class="box-title flex-row flex-center">DATA LIMITE</span>
-          <div class="box-content flex-center"></div>
+          <label class="box-title flex-row flex-center">DATA LIMITE</label>
+          <input type="date" class="box-content text-center">
         </div>
 
         <div id="descricao-servico" class="col-span-12 box flex-col">
@@ -190,6 +193,6 @@
       </ul>
     </footer>
 
-    <script defer src="./app.js"></script>
+    <script defer type="module" src="./app.js"></script>
   </body>
 </html>
