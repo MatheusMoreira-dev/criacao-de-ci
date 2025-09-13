@@ -223,8 +223,6 @@ textarea{
 /*---------------------------------Regras Específicas---------------------------------*/
 
 /*Seção de Contratante*/
-section#contratante{min-height: 18%;}
-
 #logo-cnpj-codigo{
     gap: 1px;
     padding: 0.1rem 1rem;
@@ -250,7 +248,7 @@ section#contratante{min-height: 18%;}
 
 /*Seção de Pagamento*/
 
-#drop-prestadores > input, #drop-cnpj-cpf > input{
+#drop-prestadores, #drop-cnpj-cpf{
     min-height: 2rem;
 }
 
@@ -296,4 +294,10 @@ footer{
 
 .menu-acoes button:hover{
     cursor: pointer;
+}
+
+@media print{
+    header, footer{
+        display: none;
+    }
 }

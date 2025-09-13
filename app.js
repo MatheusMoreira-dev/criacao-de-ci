@@ -66,28 +66,22 @@ function selectItem (event) {
 
     input.style.width = span.offsetWidth + 10 + "px";
 }
+
 // Carregar no dropdown todos os itens
-function loadItems (dropDown, values = [] ,onClick = null) {
+function loadItems ({dropDown, values = []}) {
     let item;
 
     for (let value of values){
         item = document.createElement('li');
         item.textContent = value;
 
-        if(onClick == null) {
-            item.addEventListener('mousedown', e => selectItem(e));
-        } else {
-            item.addEventListener('mousedown', function(e) {
-                selectItem(e);
-                onClick(e);
-            })
-        }
-
+        item.addEventListener('mousedown', selectItem);
         dropDown.appendChild(item);
     }
-} 
+}
+
 // Criar dropdown container
-function createDropdown (idContainer, {items = [], isSearchable = false, onClick}) {
+function createDropdown (idContainer, {items = [], isSearchable = false, onInput}) {
     let childs = [];
     
     // Container
@@ -101,6 +95,8 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     input.readOnly = !isSearchable;
     input.autocomplete= "off";
 
+    if(onInput != null) {input.addEventListener('input', onInput);}
+
     // Dropdown
     const dropDown = document.createElement('ul');
     dropDown.id = `${container.id + "-list"}`;
@@ -108,7 +104,10 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     if (isSearchable){
         input.addEventListener('input', function() {
             dropDown.innerHTML = '';
-            loadItems(dropDown, items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()), onClick))
+            loadItems({
+                dropDown: dropDown,
+                values: items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
+            });
         });
     }
 
@@ -119,15 +118,18 @@ function createDropdown (idContainer, {items = [], isSearchable = false, onClick
     childs.concat([input,dropDown,span]).forEach(c => container.appendChild(c));
     
     //Carregar Items
-    loadItems(dropDown, items, onClick);
+    loadItems({
+        dropDown: dropDown, 
+        values: items
+    });
     
     return container;
 }
 
 createDropdown('drop-unidades',{
     items: unidades.map(u => u.nome),
-    onClick: function (event) {
-        const item = unidades.find(u => u.nome == event.target.textContent);
+    onInput: function (event) {
+        const item = unidades.find(u => u.nome == event.target.value);
 
         const cnpj = document.querySelector('#cnpj-unidade');
         cnpj.textContent = item.cnpj;
@@ -139,10 +141,9 @@ createDropdown('drop-unidades',{
 
 createDropdown('drop-setores', {
     items: setores.map(s => s.nome),
-    label:"SETOR:",
-    onClick: function (event) {
+    onInput: function (event) {
         document.querySelector('#drop-colaboradores').innerHTML = '';
-        let setor = setores.find(s => s.nome == event.target.textContent);
+        let setor = setores.find(s => s.nome == event.target.value);
         
         createDropdown('drop-colaboradores', {
             items: setor.colaboradores,
@@ -156,9 +157,9 @@ createDropdown('drop-setores', {
 createDropdown('drop-prestadores', {
     items: prestadores.map(p => `${p.nomeEmpresarial} - ${p.nomeFantasia}`),
     isSearchable: true,
-    onClick: function (event) {
+    onInput: function (event) {
         document.querySelector('#drop-cnpj-cpf').innerHTML = '';
-        const prestador = prestadores.find(p => event.target.textContent.includes(p.nomeEmpresarial));
+        const prestador = prestadores.find(p => event.target.value.includes(p.nomeEmpresarial));
 
         createDropdown('drop-cnpj-cpf', {
             items: Object.values(prestador.codigo)
