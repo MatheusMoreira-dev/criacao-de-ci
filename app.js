@@ -22,7 +22,7 @@ const unidades = [
         "cnpj": "25.001.332/0003-83",
         "codigo": "72103-4"
     }
-]
+];
 
 const setores = [
     {
@@ -50,12 +50,16 @@ const prestadores = [
         'dataPadrao': '',
         'pagamentoPadrao': '',
     }
-]
-const today = new Date();
-const dateToString = (date = today) => date.toISOString().split("T")[0]; 
+];
 
-document.getElementById('data-solicitacao').value = dateToString();
-document.getElementById('data-limite-pagamento').value = dateToString();
+function upperCase () {
+    const allInput = document.querySelectorAll('input[type="text"], textarea');
+    Array.from(allInput).forEach(i => {
+        i.addEventListener('input', function(event){
+            event.target.value = String(event.target.value).toUpperCase();
+        });
+    });
+}
 
 function resizeInput (idInput) {
     const input = document.getElementById(idInput);
@@ -106,6 +110,10 @@ createDropdown('drop-prestadores', {
             createDropdown('drop-cnpj-cpf', {
                 items: Object.values(prestador.codigo)
             });
+
+            createDropdown('drop-banco', {
+                items: prestadores.map(p => p.nomeEmpresarial)
+            });
         }
     }
 });
@@ -121,4 +129,33 @@ createChecklist({
         checkitem({label: 'Água/Luz/Telefone/Celular/Internet/Tributos'}),
         checkitem({label: 'Outros: _________________'})
     ]
-})
+});
+
+createChecklist({
+    id: 'tipos-de-pagamento',
+    items: [
+        checkitem({label: 'DEPÓSITO ONLINE'}),
+        checkitem({label: 'CHEQUE'}),
+        checkitem({label: 'CAIXA'}),
+        checkitem({label: 'BOLETO'})
+    ]
+});
+
+createChecklist({
+    id: 'tipos-de-conta',
+    items: [
+        checkitem({label: 'CORRENTE'}),
+        checkitem({label: 'POUPANÇA'})
+    ]
+});
+
+function todayDate(){
+    // DEFINIR A DATA DE SOLICITAÇÃO E DATA DE PAGAMENTO
+    const today = new Date();
+    const dateToString = (date = today) => date.toISOString().split("T")[0]; 
+    
+    document.getElementById('data-solicitacao').value = dateToString();
+    document.getElementById('data-limite-pagamento').value = dateToString();
+}
+
+todayDate();

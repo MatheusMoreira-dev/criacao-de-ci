@@ -37,7 +37,7 @@
           <div id="drop-unidades" class="flex-center"></div>
         </div>
 
-        <div id="setor-solicitante-data-ramal" class="col-span-8 box box-content flex-col space-between tiny-text">
+        <div id="setor-solicitante-data-ramal" class="col-span-7 box box-content flex-col space-between tiny-text">
           <div class="box flex-row">
             <label class="box-title text-center">SETOR:</label>
             <div id="drop-setores" class="expand"></div>
@@ -52,11 +52,11 @@
           </div>
           <div class="box flex-row">
             <label for="ramal" class="box-title text-center">RAMAL:</label>
-            <input id="ramal" type="text" readonly class="expand">
+            <input id="ramal" type="number" readonly class="expand">
           </div>
         </div>
 
-        <div id="checklist-anexos" class="col-span-4 box tiny-text">
+        <div id="checklist-anexos" class="col-span-5 box tiny-text">
           <p class="box-title text-center">Documentos Anexados</p>
           <form id="check-anexos" class="box-content flex-col"></form>
         </div>
@@ -95,46 +95,14 @@
           <p class="box-title flex-row flex-center">FORMA DE PAGAMENTO</p>
 
           <form class="box-content expand flex-row flex-center space-between">
-            <div class="tipos-de-pagamento flex-col">
-              <label class="tipos-de-pagamento__checkbox checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                DEPÓSITO ONLINE
-              </label>
-
-              <label class="tipos-de-pagamento__checkbox checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                CHEQUE
-              </label>
-
-              <label class="tipos-de-pagamento__checkbox checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                CAIXA
-              </label>
-
-              <label class="tipos-de-pagamento__checkbox checkbox-container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                BOLETO
-              </label>
-            </div>
-
-            <div class="conta-bancaria">
-              
-              <label class="conta-corrente checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                  Corrente
-              </label>
-
-              <label class="conta-poupanca checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                  Poupança
-              </label>
-
+            <div id="tipos-de-pagamento" class="tipos-de-pagamento flex-col"></div>
+            <div class="flex-col space-between">
+              <div id="tipos-de-conta" class="flex-row space-between"></div>
+              <div id="drop-banco" class="flex-row flex-center"></div>
+              <div>
+                <input id="conta-numero">
+                <input id="conta-agencia">
+              </div>
             </div>
           </form>
         </div>

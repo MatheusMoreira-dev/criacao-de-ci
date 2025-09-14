@@ -94,30 +94,27 @@
 
 .carimbo{min-height: 3rem;}
 
-.checkitem input{
-    display: none;
+.checklist{gap: 0.25em;}
+
+.checkitem{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.checkitem input{display: none;}
 
 .checkitem span{
     display: inline-block;
     border: 1px solid black;
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
 }
 
 .checkitem span:hover{
     background-color: var(--color-inputHoverAndFocus-background);
     cursor: pointer;
-}
-
-.checkitem.tiny {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1px;
-}
-
-.checkitem.tiny span{
-    width: var(--size-checkBoxTiny);
-    height: var(--size-checkBoxTiny);
 }
 
 .dropdown-container {
