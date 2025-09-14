@@ -57,6 +57,13 @@ const dateToString = (date = today) => date.toISOString().split("T")[0];
 document.getElementById('data-solicitacao').value = dateToString();
 document.getElementById('data-limite-pagamento').value = dateToString();
 
+function resizeInput (idInput) {
+    const input = document.getElementById(idInput);
+    const inputContainer = input.parentElement;
+
+    const spanMirror = document.createElement('span');
+}
+
 import {createDropdown} from './scripts/dropdown.js';
 import {createChecklist, checkitem} from './scripts/checklist.js';
 
