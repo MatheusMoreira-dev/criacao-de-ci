@@ -105,7 +105,9 @@
 .checkitem input{display: none;}
 
 .checkitem span{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
     width: 1em;
     height: 1em;
@@ -115,6 +117,13 @@
 .checkitem span:hover{
     background-color: var(--color-inputHoverAndFocus-background);
     cursor: pointer;
+}
+
+.checkitem input:checked + span::after {
+    content: "X";
+    font-weight: 1000;
+    font-size: 1em;
+    color: black;
 }
 
 .dropdown-container {
