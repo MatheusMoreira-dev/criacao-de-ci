@@ -13,7 +13,7 @@ export function checkitem({label}){
     return container;
 }
 
-export function createChecklist({ id = '',items = []}){
+export function createChecklist({ id = '',items = [], isMultipleChoice = false}){
     const container = document.getElementById(id);
     container.classList.add('checklist');
 

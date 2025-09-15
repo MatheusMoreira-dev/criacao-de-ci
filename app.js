@@ -66,6 +66,7 @@ const dropDowns = [
 const checklists = [
     createChecklist({
         id: 'check-anexos',
+        isMultipleChoice: true,
         items: [
             checkitem({label: 'Nota Fiscal ou Recibo'}),
             checkitem({label: 'Orçamento Aprovado'}),

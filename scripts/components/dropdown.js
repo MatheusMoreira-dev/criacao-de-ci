@@ -1,3 +1,50 @@
+const style = {
+    ".dropdown-container":{
+        'position': 'relative',
+        'display': 'inline-block',
+        'width': '100%'
+    },
+
+    ".dropdown-container > ul":{
+        'border': '1px solid',
+        'padding': '5px',
+        'width': '100%',
+        'max-width': '40dvw',
+        'min-width': '15dvw',
+        'max-height': '20dvh',
+        'overflow-y': 'auto',
+        'overflow-x': 'none',
+        'visibility': 'hidden',
+        'transition': 'opacity 0.3s ease',
+        'opacity': '0',
+        'position': 'absolute',
+        'transform': 'translate(-50%, 0%)',
+        'top': '100%',
+        'left': '50%',
+        'z-index': '99999',
+        'background-color': '',
+
+        'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.2)',
+        'border-radius': '0.5rem',
+    },
+
+    ".dropdown-container >ul li":{
+        'padding': '5px',
+        'width': '100%',
+        'border-bottom': '1px solid'
+    },
+
+    ".dropdown-container > input":{
+        width: '100%'
+    },
+
+    ".dropdown-container > span":{
+        "visibility":"hidden", 
+        "position":"absolute", 
+        "white-space":"pre"
+    }
+}
+
 // Selecionar item para o Input 
 function selectItem (event) {
     const dropDown = event.target.parentNode.parentNode;
@@ -21,7 +68,7 @@ function loadItems ({dropDown, values = []}) {
 }
 
 // Criar dropdown container
-export function createDropdown (idContainer, options = {dataBase: [], keyLabel, isSearchable: false, onInput}) {
+export function createDropdown (idContainer, options = {dataBase: [], keyLabel, isSearchable: false, onInput, style}) {
     let items = (options.keyLabel == null) ? (options.dataBase) : (options.dataBase.map(d => d[options.keyLabel]));
     
     // Container
