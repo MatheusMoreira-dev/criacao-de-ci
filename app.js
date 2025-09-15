@@ -24,18 +24,20 @@ function resizeInput (idInput) {
 import {createDropdown} from './scripts/dropdown.js';
 import {createChecklist, checkitem} from './scripts/checklist.js';
 
-createDropdown('drop-unidades', {
-    items: unidades.map(u => u.nome),
-    onInput: function (event) {
-        const item = unidades.find(u => u.nome == event.target.value);
+createDropdown('drop-unidades', 
+    {
+        date: unidades.map(u => u.nome),
+        onInput: function (event) {
+            const item = this.date.find(u => u.nome == event.target.value);
 
-        const cnpj = document.querySelector('#cnpj-unidade');
-        cnpj.textContent = item.cnpj;
+            const cnpj = document.querySelector('#cnpj-unidade');
+            cnpj.textContent = item.cnpj;
 
-        const codigo = document.querySelector('#codigo-unidade');
-        codigo.textContent = item.codigo;
+            const codigo = document.querySelector('#codigo-unidade');
+            codigo.textContent = item.codigo;
+        }
     }
-});
+);
 
 createDropdown('drop-setores', {
     items: setores.map(s => s.nome),

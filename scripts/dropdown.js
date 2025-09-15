@@ -21,7 +21,8 @@ function loadItems ({dropDown, values = []}) {
 }
 
 // Criar dropdown container
-export function createDropdown (idContainer, options = {items: [], isSearchable: false, onInput}) {
+export function createDropdown (idContainer, options = {date: [], labelItem, isSearchable: false, onInput}) {
+    let listItems = (options.labelItem == null) ? (options.date) : (options.date.map(d => options.labelItem(d)));
     let childs = [];
     
     // Container
@@ -36,9 +37,7 @@ export function createDropdown (idContainer, options = {items: [], isSearchable:
     input.autocomplete= "off";
 
     if(options.onInput != null) {
-        input.addEventListener('input', (event) => {
-            options.onInput(event, options);
-        });
+        input.addEventListener('input', options.onInput.bind(options));
     }
 
     // Dropdown
@@ -50,7 +49,7 @@ export function createDropdown (idContainer, options = {items: [], isSearchable:
             dropDown.innerHTML = '';
             loadItems({
                 dropDown: dropDown,
-                values: options.items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
+                values: listItems.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
             });
         });
     }
@@ -64,7 +63,7 @@ export function createDropdown (idContainer, options = {items: [], isSearchable:
     //Carregar Items
     loadItems({
         dropDown: dropDown, 
-        values: options.items
+        values: listItems
     });
     
     return container;
