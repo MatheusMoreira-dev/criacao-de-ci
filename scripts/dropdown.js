@@ -21,7 +21,7 @@ function loadItems ({dropDown, values = []}) {
 }
 
 // Criar dropdown container
-export function createDropdown (idContainer, {items = [], isSearchable = false, onInput}) {
+export function createDropdown (idContainer, options = {items: [], isSearchable: false, onInput}) {
     let childs = [];
     
     // Container
@@ -32,21 +32,25 @@ export function createDropdown (idContainer, {items = [], isSearchable = false, 
     const input = document.createElement('input');
     input.type = 'text';
     input.id = `${container.id}-input`
-    input.readOnly = !isSearchable;
+    input.readOnly = !options.isSearchable;
     input.autocomplete= "off";
 
-    if(onInput != null) {input.addEventListener('input', onInput);}
+    if(options.onInput != null) {
+        input.addEventListener('input', (event) => {
+            options.onInput(event, options);
+        });
+    }
 
     // Dropdown
     const dropDown = document.createElement('ul');
     dropDown.id = `${container.id + "-list"}`;
 
-    if (isSearchable){
+    if (options.isSearchable){
         input.addEventListener('input', function() {
             dropDown.innerHTML = '';
             loadItems({
                 dropDown: dropDown,
-                values: items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
+                values: options.items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
             });
         });
     }
@@ -60,7 +64,7 @@ export function createDropdown (idContainer, {items = [], isSearchable = false, 
     //Carregar Items
     loadItems({
         dropDown: dropDown, 
-        values: items
+        values: options.items
     });
     
     return container;
