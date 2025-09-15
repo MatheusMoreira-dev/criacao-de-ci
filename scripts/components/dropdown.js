@@ -21,9 +21,8 @@ function loadItems ({dropDown, values = []}) {
 }
 
 // Criar dropdown container
-export function createDropdown (idContainer, options = {date: [], labelItem, isSearchable: false, onInput}) {
-    let listItems = (options.labelItem == null) ? (options.date) : (options.date.map(d => options.labelItem(d)));
-    let childs = [];
+export function createDropdown (idContainer, options = {dataBase: [], keyLabel, isSearchable: false, onInput}) {
+    let items = (options.keyLabel == null) ? (options.dataBase) : (options.dataBase.map(d => d[options.keyLabel]));
     
     // Container
     const container = document.getElementById(idContainer);
@@ -49,7 +48,7 @@ export function createDropdown (idContainer, options = {date: [], labelItem, isS
             dropDown.innerHTML = '';
             loadItems({
                 dropDown: dropDown,
-                values: listItems.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
+                values: items.filter(v => v.toLowerCase().includes(input.value.toLowerCase()))
             });
         });
     }
@@ -58,12 +57,12 @@ export function createDropdown (idContainer, options = {date: [], labelItem, isS
     const span = document.createElement('span');
     
     //Inserir no container
-    childs.concat([input,dropDown,span]).forEach(c => container.appendChild(c));
+    [input,dropDown,span].forEach(c => container.appendChild(c));
     
     //Carregar Items
     loadItems({
         dropDown: dropDown, 
-        values: listItems
+        values: items
     });
     
     return container;
