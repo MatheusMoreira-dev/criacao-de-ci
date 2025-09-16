@@ -32,12 +32,12 @@
           </figcaption>
         </div>
 
-        <div id="titulo-unidade" class="col-span-9 box flex-col flex-center space-evenly">
+        <div id="titulo-unidade" class="col-span-9 box box-content flex-col flex-center space-evenly">
           <h1>SOLICITAÇÃO DE PAGAMENTO</h1>
           <div id="drop-unidades" class="flex-center"></div>
         </div>
 
-        <div id="setor-solicitante-data-ramal" class="col-span-7 box box-content flex-col space-between tiny-text">
+        <div id="setor-solicitante-data-ramal" class="col-span-7 box box-content flex-col space-evenly tiny-text">
           <div class="box flex-row">
             <label class="box-title text-center">SETOR:</label>
             <div id="drop-setores" class="expand"></div>
@@ -94,15 +94,41 @@
         <div id="forma-de-pagamento" class="col-span-12 box flex-col">
           <p class="box-title flex-row flex-center">FORMA DE PAGAMENTO</p>
 
-          <form class="box-content expand flex-row flex-center space-between">
+          <form class="box-content flex-row space-between">
             <div id="tipos-de-pagamento" class="tipos-de-pagamento flex-col"></div>
-            <div class="flex-col space-between">
-              <div id="tipos-de-conta" class="flex-row space-between"></div>
-              <div id="drop-banco" class="flex-row flex-center"></div>
-              <div>
-                <input id="conta-numero">
-                <input id="conta-agencia">
-              </div>
+            
+            <div id="dados-bancarios">
+              <div id="tipos-de-conta" class="col-span-10 flex-row space-between"></div>
+              
+              <label class="col-span-10">
+                N° Banco:
+                <input id="cod-banco" readonly>
+              </label>
+
+              <label class="col-span-10">
+                Banco:
+                <div id="drop-banco" class="flex-row flex-center"></div>
+              </label>
+
+              <label class="col-span-5">
+                Agência:
+                <input id="agencia" readonly>
+              </label>
+
+              <label class="col-span-5">
+                Dígito:
+                <input id="digito-agencia">
+              </label>
+
+              <label class="col-span-5">
+                Conta:
+                <input id="conta">
+              </label>
+
+              <label class="col-span-5">
+                Dígito:
+                <input id="digito-conta">
+              </label>
             </div>
           </form>
         </div>

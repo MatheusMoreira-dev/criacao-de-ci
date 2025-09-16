@@ -109,8 +109,8 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     padding: 0.5em;
     border-radius: 0.2em;
 }
@@ -265,6 +265,12 @@ textarea{
 #favorecido-cpf-cnpj .box-title{flex: 0 0 15%;}
 
 #descricao-servico > textarea{height: 7rem;}
+
+#dados-bancarios{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
 
 /*Seção de Carimbos de Conferência*/
 
