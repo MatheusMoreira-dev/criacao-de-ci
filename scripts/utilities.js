@@ -13,3 +13,34 @@ export function upperCase () {
         });
     });
 }
+
+export function moneyInput(id){
+    const input = document.getElementById(id);
+    let valor = 0;
+
+    input.addEventListener('input', (event) => {
+        let digitos = event.target.value.replace('/[^0-9]/g', "");
+        console.log(digitos);
+        if(!digitos) digitos = '0';
+
+        valor = parseInt(digitos);
+        let monetario = (valor/100).toLocaleString('pt-br', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+
+        input.value = monetario;
+    });
+
+    input.addEventListener('input', (event) => {
+        if(event.key === 'Backspace'){
+            valor = Math.floor(valor/10);
+            let monetario = (valor/100).toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            input.value = monetario;
+            event.preventDefault();
+        }
+    });
+}

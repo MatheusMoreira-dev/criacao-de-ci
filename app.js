@@ -1,5 +1,6 @@
 import {createDropdown} from './scripts/components/dropdown.js';
 import {createChecklist, checkitem} from './scripts/components/checklist.js';
+import { moneyInput } from './scripts/utilities.js';
 
 const dbJson = async () => await fetch("./db.json")
 .then(res => res.json());
@@ -106,4 +107,5 @@ function todayDate(){
     document.getElementById('data-limite-pagamento').value = dateToString();
 }
 
+moneyInput('valor-real');
 todayDate();
