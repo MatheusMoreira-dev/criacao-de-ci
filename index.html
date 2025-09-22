@@ -91,43 +91,45 @@
         <div id="forma-de-pagamento" class="col-span-12 box flex-col">
           <p class="box-title flex-row flex-center">FORMA DE PAGAMENTO</p>
 
-          <form class="box-content flex-row space-between">
-            <div id="tipos-de-pagamento" class="tipos-de-pagamento flex-col"></div>
+          <div class="box-content flex-row space-between">
+            <div id="tipos-de-pagamento" class="tipos-de-pagamento flex-col space-between"></div>
             
-            <div id="dados-bancarios">
-              <div id="tipos-de-conta" class="col-span-10 flex-row space-between"></div>
+            <div id="dados-bancarios" class="flex-col space-between">
+              <div id="tipos-de-conta" class="flex-row space-between"></div>
               
-              <label class="col-span-10">
-                N° Banco:
-                <input id="cod-banco" readonly>
-              </label>
+              <div>
+                  <label>N Banco:</label>
+                  <input type="number">
+              </div>
 
-              <label class="col-span-10">
-                Banco:
-                <div id="drop-banco" class="flex-row flex-center"></div>
-              </label>
+              <div>
+                  <label>Banco:</label>
+                  <input type="text">
+              </div>
+              
+              <div class="flex-row space-between">
+                <div>
+                  <label>Agência:</label>
+                  <input type="text">
+                </div>
+                <div>
+                  <label>Dígito:</label>
+                  <input type="text">
+                </div>
+              </div>
 
-              <label class="col-span-5">
-                Agência:
-                <input id="agencia" readonly>
-              </label>
-
-              <label class="col-span-5">
-                Dígito:
-                <input id="digito-agencia">
-              </label>
-
-              <label class="col-span-5">
-                Conta:
-                <input id="conta">
-              </label>
-
-              <label class="col-span-5">
-                Dígito:
-                <input id="digito-conta">
-              </label>
+              <div class="flex-row space-between">
+                <div>
+                  <label>Conta:</label>
+                  <input type="text">
+                </div>
+                <div>
+                  <label>Dígito:</label>
+                  <input type="text">
+                </div>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
 
         <div id="carimbo-solicitante" class="col-span-6 box flex-col">
@@ -178,9 +180,9 @@
     
     <footer>
       <ul class="menu-acoes">
-        <li><button>Gravar</button></li>
-        <li><button>Baixar PDF</button></li>
-        <li><button>Imprimir</button></li>
+        <li><button disabled>Gravar</button></li>
+        <li><button disabled>Baixar PDF</button></li>
+        <li><button disabled>Imprimir</button></li>
       </ul>
     </footer>
 
